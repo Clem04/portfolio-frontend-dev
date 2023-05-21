@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { createGlobalStyle } from 'styled-components';
 import { ThemeProvider } from './ThemeProvider';
 import { greenTheme } from './theme';
-import App from './App/App';
+import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 
 const GlobalStyle = createGlobalStyle`
