@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes, forwardRef } from "react";
 import styled from "styled-components";
 
-interface SectionProps {
+interface SectionProps extends HTMLAttributes<HTMLDivElement> {
   backgroundColor: string;
   dataTestId?: string;
   shadow?: boolean;
@@ -21,21 +21,20 @@ const SectionContainer = styled.div<SectionProps>`
   align-items: center;
 `;
 
-function Section({
-  backgroundColor,
-  shadow,
-  children,
-  dataTestId,
-}: SectionProps) {
-  return (
-    <SectionContainer
-      data-testid={dataTestId}
-      backgroundColor={backgroundColor}
-      shadow={shadow}
-    >
-      {children}
-    </SectionContainer>
-  );
-}
+const Section = forwardRef<HTMLDivElement, SectionProps>(
+  ({ backgroundColor, shadow, children, dataTestId, ...rest }, ref) => {
+    return (
+      <SectionContainer
+        ref={ref}
+        data-testid={dataTestId}
+        backgroundColor={backgroundColor}
+        shadow={shadow}
+        {...rest}
+      >
+        {children}
+      </SectionContainer>
+    );
+  }
+);
 
 export default Section;

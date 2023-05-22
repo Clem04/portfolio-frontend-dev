@@ -1,4 +1,6 @@
-export interface Theme {
+import { DefaultTheme } from 'styled-components';
+
+export interface Theme extends DefaultTheme {
   fonts: {
     primary: string;
     secondary: string;
@@ -37,7 +39,7 @@ export const greenTheme: Theme = {
   fonts: {
     primary: 'Arial, sans-serif',
     secondary: 'Roboto, sans-serif',
-    topSection: 'Inria Serif',
+    topSection: 'Inria Sans',
     sectionHeader: 'League Gothic',
     skillsHeader: 'Jura', 
     body: 'Kai', 
