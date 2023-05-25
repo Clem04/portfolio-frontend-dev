@@ -54,7 +54,7 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
         backgroundColor={theme.colors.primary}
         dataTestId={dataTestId}
         {...rest}
-        margin="0 0 88px 0"
+        height="100vh"
       >
         <InnerSection
           height={{

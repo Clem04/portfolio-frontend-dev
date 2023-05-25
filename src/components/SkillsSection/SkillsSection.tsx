@@ -58,6 +58,8 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
       ref={sectionRef} 
       dataTestId={dataTestId} 
       backgroundColor={theme.colors.white}
+      margin="50px 0"
+      height="100vh"
     >
       <InnerSection
         height={{
@@ -69,7 +71,7 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
         <Content>
-          <SectionName label="Skills"/>
+          <SectionName label="Skills" textAlign="left" Left="-88px" Top="-88px" />
           <ProgressBar
             progress={100}
             width="356px"
