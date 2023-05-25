@@ -3,7 +3,7 @@ import styled, { CSSProperties } from 'styled-components';
 
 interface InnerSectionProps {
   height: {
-    desktop: string;
+    desktop?: string;
     tablet: string;
     mobile: string;
   };
@@ -11,16 +11,16 @@ interface InnerSectionProps {
   shadow?: string;
   border?: string;
   children?: React.ReactNode;
-  padding: string;
+  padding?: string;
 }
 
 interface ContainerProps {
   backgroundColor?: string;
   shadow?: string;
   border?: string;
-  padding: string;
+  padding?: string;
   height: {
-    desktop: CSSProperties['height'];
+    desktop?: CSSProperties['height'];
     tablet: CSSProperties['height'];
     mobile: CSSProperties['height'];
   };
@@ -28,7 +28,7 @@ interface ContainerProps {
 
 const Container = styled.div<ContainerProps>`
   width: 100%;
-  padding: ${(props) => props.padding};
+  padding: ${(props) => props.padding || "auto"};
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -37,13 +37,13 @@ const Container = styled.div<ContainerProps>`
   border: ${(props) => props.border};
   height: ${(props) => props.height.desktop};
   
-  // @media (max-width: 1024px) {
-  //   height: ${(props) => props.height.tablet};
-  // }
+  @media (max-width: 1024px) {
+    height: ${(props) => props.height.tablet};
+  }
   
-  // @media (max-width: 768px) {
-  //   height: ${(props) => props.height.mobile};
-  // }
+  @media (max-width: 768px) {
+    height: ${(props) => props.height.mobile};
+  }
 }`;
 
 export const InnerSection: React.FC<InnerSectionProps> = ({

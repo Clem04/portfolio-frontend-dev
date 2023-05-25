@@ -6,12 +6,13 @@ interface SectionProps extends HTMLAttributes<HTMLDivElement> {
   margin?: string;
   dataTestId?: string;
   shadow?: boolean;
+  height?: string;
   children: ReactNode;
 }
 
 const SectionContainer = styled.div<SectionProps>`
   width: 100%;
-  height: 100vh;
+  height: ${(props) => props.height || "auto"};
   margin: ${(props) => props.margin};
   background-color: ${(props) => props.backgroundColor};
   box-shadow: ${(props) =>
@@ -24,7 +25,7 @@ const SectionContainer = styled.div<SectionProps>`
 `;
 
 const Section = forwardRef<HTMLDivElement, SectionProps>(
-  ({ backgroundColor, margin, shadow, children, dataTestId, ...rest }, ref) => {
+  ({ backgroundColor, margin, shadow, children, height, dataTestId, ...rest }, ref) => {
     return (
       <SectionContainer
         ref={ref}
@@ -33,6 +34,7 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
         shadow={shadow}
         {...rest}
         margin={margin}
+        height={height}
       >
         {children}
       </SectionContainer>
