@@ -30,6 +30,7 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
           mobile: '300px',
         }}
         border='1px solid black'
+        padding="80px 80px 24px 80px"
       >
         Contact
       </InnerSection>

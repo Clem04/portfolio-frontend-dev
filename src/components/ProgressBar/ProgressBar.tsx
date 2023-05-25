@@ -2,14 +2,15 @@ import { useState, useEffect, forwardRef, HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { slidingAnimation, GelatineAnimation } from '../Shared/Animation'
 
-const ProgressBarContainer = styled.div`
-  width: 500px;
+const ProgressBarContainer = styled.div<{ width: string }>`
+  width: ${({ width }) => width};
   height: 20px;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   align-items: center;
   margin-right: 24px;
+  margin-top: ${(props) => props.style?.marginTop};
 `;
 
 const Progress = styled.div<{ progress: number, from: string, to: string }>`
@@ -39,13 +40,14 @@ export interface ProgressBarProps extends HTMLAttributes<HTMLDivElement> {
   progress: number;
   color: string;
   animate?: boolean;
+  width: string;
   from: string;
   to: string;
   onAnimationFinish?: () => void;
 }
 
 const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
-  ({ progress, color, animate, from, to, onAnimationFinish }: ProgressBarProps, ref) => {
+  ({ progress, color, animate, width, from, to, onAnimationFinish, style  }: ProgressBarProps, ref) => {
     const [animateBouncing, setAnimateBouncing] = useState(false);
 
     useEffect(() => {
@@ -63,7 +65,7 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
     }, [progress, onAnimationFinish]);
 
     return (
-      <ProgressBarContainer ref={ref}>
+      <ProgressBarContainer ref={ref} width={width} style={style }>
         <Progress progress={progress} color={color} from={from} to={to} />
         {progress === 100 && <BouncingCircle animate={animate !== undefined ? animate : animateBouncing} color={color} />}
       </ProgressBarContainer>

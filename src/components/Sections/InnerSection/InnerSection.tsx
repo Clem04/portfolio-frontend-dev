@@ -11,12 +11,14 @@ interface InnerSectionProps {
   shadow?: string;
   border?: string;
   children?: React.ReactNode;
+  padding: string;
 }
 
 interface ContainerProps {
   backgroundColor?: string;
   shadow?: string;
   border?: string;
+  padding: string;
   height: {
     desktop: CSSProperties['height'];
     tablet: CSSProperties['height'];
@@ -26,7 +28,7 @@ interface ContainerProps {
 
 const Container = styled.div<ContainerProps>`
   width: 100%;
-  padding: 80px 80px 24px 80px;
+  padding: ${(props) => props.padding};
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -35,13 +37,13 @@ const Container = styled.div<ContainerProps>`
   border: ${(props) => props.border};
   height: ${(props) => props.height.desktop};
   
-  @media (max-width: 1024px) {
-    height: ${(props) => props.height.tablet};
-  }
+  // @media (max-width: 1024px) {
+  //   height: ${(props) => props.height.tablet};
+  // }
   
-  @media (max-width: 768px) {
-    height: ${(props) => props.height.mobile};
-  }
+  // @media (max-width: 768px) {
+  //   height: ${(props) => props.height.mobile};
+  // }
 }`;
 
 export const InnerSection: React.FC<InnerSectionProps> = ({
@@ -49,6 +51,7 @@ export const InnerSection: React.FC<InnerSectionProps> = ({
   backgroundColor,
   shadow,
   border,
+  padding,
   children,
 }) => {
   return (
@@ -57,6 +60,7 @@ export const InnerSection: React.FC<InnerSectionProps> = ({
       backgroundColor={backgroundColor}
       shadow={shadow}
       border={border}
+      padding={padding}
     >
       {children}
     </Container>
