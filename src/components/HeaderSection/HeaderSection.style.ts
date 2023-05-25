@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { ReactComponent as ArrowDown } from '../Assets/arrow_down.svg';
-import { ReactComponent as LocationIcon } from '../Assets/location.svg';
+import { ReactComponent as ArrowDown } from '../assets/svg/icons/arrow_down.svg';
+import { ReactComponent as LocationIcon } from '../assets/svg/icons/location.svg';
 import { fadeInAnimation, BouncingAnimation } from '../Shared/Animation';
 
 export const Name = styled.p`

@@ -11,7 +11,7 @@ import {
   Location,
   IconLocation,
   ArrowDownIcon
-} from './HeaderSectionStyles';
+} from './HeaderSection.style';
 
 interface Theme {
   colors: {
@@ -54,6 +54,7 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
         backgroundColor={theme.colors.primary}
         dataTestId={dataTestId}
         {...rest}
+        margin="0 0 88px 0"
       >
         <InnerSection
           height={{
@@ -61,6 +62,7 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
             tablet: '400px',
             mobile: '300px',
           }}
+          padding="80px 80px 24px 80px"
           border={`1px solid ${theme.colors.white}`}
         >
           <Name>Clem Paiement.</Name>
@@ -68,6 +70,7 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           <CertificationContainer>
             <ProgressBar
               progress={100}
+              width="500px"
               from="-500px" 
               to="0"
               color={theme.colors.white}

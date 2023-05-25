@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface SectionProps extends HTMLAttributes<HTMLDivElement> {
   backgroundColor: string;
+  margin?: string;
   dataTestId?: string;
   shadow?: boolean;
   children: ReactNode;
@@ -11,6 +12,7 @@ interface SectionProps extends HTMLAttributes<HTMLDivElement> {
 const SectionContainer = styled.div<SectionProps>`
   width: 100%;
   height: 100vh;
+  margin: ${(props) => props.margin};
   background-color: ${(props) => props.backgroundColor};
   box-shadow: ${(props) =>
     props.shadow
@@ -22,7 +24,7 @@ const SectionContainer = styled.div<SectionProps>`
 `;
 
 const Section = forwardRef<HTMLDivElement, SectionProps>(
-  ({ backgroundColor, shadow, children, dataTestId, ...rest }, ref) => {
+  ({ backgroundColor, margin, shadow, children, dataTestId, ...rest }, ref) => {
     return (
       <SectionContainer
         ref={ref}
@@ -30,6 +32,7 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
         backgroundColor={backgroundColor}
         shadow={shadow}
         {...rest}
+        margin={margin}
       >
         {children}
       </SectionContainer>
