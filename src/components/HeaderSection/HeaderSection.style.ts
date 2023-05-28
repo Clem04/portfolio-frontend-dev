@@ -7,23 +7,30 @@ export const Name = styled.p`
   width: 100%;
   color: ${(props) => props.theme.colors.white};
   font-family: ${(props) => props.theme.fonts.topSection};
-  font-size: 121px;
+  font-size: 8rem;
   font-style: normal;
   font-weight: 400;
   animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  @media (max-width: 414px) {
+    font-size: 4em;
+  }
 `;
 
 export const Profession = styled.p`
   width: 100%;
   color: ${(props) => props.theme.colors.white};
-  font-size: 32px;
+  font-size: 2rem;
   animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  @media (max-width: 414px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const CertificationContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 `;
 
 export const Certification = styled.p`
@@ -37,6 +44,11 @@ export const Certification = styled.p`
 
   &.fade-in {
     animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  }
+
+  @media (max-width: 414px) {
+    width: 100%;
+    text-align: right;
   }
 `;
 
@@ -56,6 +68,9 @@ export const Location = styled.p`
   line-height: 61px;
   color: ${(props) => props.theme.colors.white};
   animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  @media (max-width: 414px) {
+    font-size: 1rem;
+  }
 `;
 
 export const IconLocation = styled(LocationIcon)`
@@ -63,6 +78,11 @@ export const IconLocation = styled(LocationIcon)`
   height: 32px;
   margin-left: 16px;
   animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  @media (max-width: 414px) {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+  }
 `;
 
 export const ArrowDownIcon = styled(ArrowDown)`

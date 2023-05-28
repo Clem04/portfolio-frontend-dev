@@ -56,7 +56,7 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
               to="0"
               color={theme.colors.primary}
               transform="rotate(180deg)"
-              marginLeft="16px"
+              margin="0 0 0 16px"
               isVisible={isVisible}
             />
           </TopSection>

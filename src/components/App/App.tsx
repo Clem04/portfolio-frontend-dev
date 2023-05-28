@@ -1,35 +1,17 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import styled, { ThemeContext } from "styled-components";
+import { ThemeContext } from "styled-components";
 import { HeaderSection } from "../HeaderSection/HeaderSection";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import IndustriesSection from "../IndustriesSection/IndustriesSection";
 import EducationSection from "../EducationSection/EducationSection";
 import ContactSection from "../ContactSection/ContactSection";
+import { AppContainer, HeaderContainer, Content } from './App.style'
 import "intersection-observer";
 
-const AppContainer = styled.div`
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  position: relative;
-`;
-
-const HeaderContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  background-color: ${(props) => props.theme.colors.primary};
-  z-index: -1;
-`;
-
-const Content = styled.div`
-  width: 80vw;
-  color: ${(props) => props.theme.colors.black};
-`;
-
 function App() {
+
   const theme = useContext(ThemeContext);
+
   const headerSectionRef = useRef<HTMLDivElement>(null);
   const skillsSectionRef = useRef<HTMLDivElement>(null);
   const industriesSectionRef = useRef<HTMLDivElement>(null);
@@ -52,7 +34,9 @@ function App() {
 
   useEffect(() => {
     const handleIntersection = (entry: IntersectionObserverEntry) => {
+
       const { target, isIntersecting } = entry;
+      
       if (target === headerSectionRef.current) {
         setIsVisible((prevState) => ({
           ...prevState,

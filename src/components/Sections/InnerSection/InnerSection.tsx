@@ -37,11 +37,11 @@ const Container = styled.div<ContainerProps>`
   border: ${(props) => props.border};
   height: ${(props) => props.height.desktop};
   
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     height: ${(props) => props.height.tablet};
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 414px) {
     height: ${(props) => props.height.mobile};
   }
 }`;

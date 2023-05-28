@@ -1,7 +1,8 @@
-import { HTMLAttributes, useEffect, forwardRef, useState, RefObject } from 'react';
+import { HTMLAttributes, forwardRef, RefObject } from 'react';
 import Section from '../Sections/Section/Section';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import { InnerSection } from '../Sections/InnerSection/InnerSection';
+import { useFadeInCertification } from '../Shared/hooks/useFadeInCertification'
 import {
   Name,
   Profession,
@@ -33,18 +34,17 @@ interface HeaderSectionProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
-  ({ theme, dataTestId, isVisible, onClick, animate, sectionRef, ...rest }: HeaderSectionProps) => {
-    const [fadeInCertification, setFadeInCertification] = useState(false);
-
-    const handleAnimationFinish = () => {
-      setFadeInCertification(true);
-    };
-
-    useEffect(() => {
-      if (animate) {
-        setFadeInCertification(true);
-      }
-    }, [animate]);
+  ({ 
+    theme, 
+    dataTestId, 
+    isVisible, 
+    onClick, 
+    animate, 
+    sectionRef, 
+    ...rest 
+  }: HeaderSectionProps) => {
+    
+    const { fadeInCertification, handleAnimationFinish } = useFadeInCertification(animate);
 
     const handleArrowDown = () => {
       onClick();
@@ -60,9 +60,9 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
       >
         <InnerSection
           height={{
-            desktop: '600px',
-            tablet: '400px',
-            mobile: '300px',
+            desktop: '80vh',
+            tablet: '72vh',
+            mobile: '64vh',
           }}
           padding="80px 80px 24px 80px"
           border={`1px solid ${theme.colors.white}`}
@@ -78,6 +78,7 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
               color={theme.colors.white}
               onAnimationFinish={handleAnimationFinish}
               isVisible={isVisible}
+              margin="0 24px 0 0"
             />
             <Certification className={fadeInCertification ? 'fade-in' : ''}>
               Certified Ui/UX Designer
