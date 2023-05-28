@@ -30,11 +30,14 @@ const Content = styled.div`
 
 function App() {
   const theme = useContext(ThemeContext);
+  const headerSectionRef = useRef<HTMLDivElement>(null);
   const skillsSectionRef = useRef<HTMLDivElement>(null);
   const industriesSectionRef = useRef<HTMLDivElement>(null);
   const educationSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
+
   const [isVisible, setIsVisible] = useState({
+    header: true,
     skills: false,
     industries: false,
     education: false,
@@ -50,7 +53,13 @@ function App() {
   useEffect(() => {
     const handleIntersection = (entry: IntersectionObserverEntry) => {
       const { target, isIntersecting } = entry;
-      if (target === skillsSectionRef.current) {
+      if (target === headerSectionRef.current) {
+        setIsVisible((prevState) => ({
+          ...prevState,
+          header: isIntersecting,
+        }));
+      }
+      else if (target === skillsSectionRef.current) {
         setIsVisible((prevState) => ({
           ...prevState,
           skills: isIntersecting,
@@ -77,6 +86,10 @@ function App() {
       entries.forEach(handleIntersection);
     }, { threshold: 0.5 });
 
+    if (headerSectionRef.current) {
+      observer.observe(headerSectionRef.current);
+    }
+
     if (skillsSectionRef.current) {
       observer.observe(skillsSectionRef.current);
     }
@@ -102,7 +115,9 @@ function App() {
         <HeaderSection
           theme={theme}
           dataTestId="header-section"
+          ref={headerSectionRef}
           onClick={handleArrowDown}
+          isVisible={isVisible.header}
         />
         <SkillsSection
           theme={theme}

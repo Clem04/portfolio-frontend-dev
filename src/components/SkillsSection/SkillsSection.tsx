@@ -78,6 +78,7 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
             from="-356px" 
             to="0"
             color={theme.colors.primary}
+            isVisible={isVisible}
           />
           <TopSection>
             <Header>Technical</Header>

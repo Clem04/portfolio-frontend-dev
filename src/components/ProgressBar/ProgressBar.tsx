@@ -1,23 +1,29 @@
 import { useState, useEffect, forwardRef, HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
-import { slidingAnimation, GelatineAnimation } from '../Shared/Animation'
+import { slidingAnimation, GelatineAnimation } from '../Shared/Animation';
 
-const ProgressBarContainer = styled.div<{ width: string }>`
+const ProgressBarContainer = styled.div<{ 
+  width: string, 
+  marginLeft?: string, 
+  transform: string | 'none' | undefined }
+>`
   width: ${({ width }) => width};
   height: 20px;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-left: ${(props) => props.marginLeft || "24px"};
   margin-top: ${(props) => props.style?.marginTop};
+  transform: ${(props) => props.transform || ""};
 `;
 
-const Progress = styled.div<{ progress: number, from: string, to: string }>`
+const Progress = styled.div<{ progress: number, from: string, to: string, isVisible?: boolean }>`
   width: ${({ progress }) => progress}%;
   height: 1px;
   background-color: ${({ color }) => color};
-  animation: ${({ from, to }) => slidingAnimation(from, to)} 1s ease-out;
+  animation: ${({ from, to, isVisible }) => isVisible ? css`${slidingAnimation(from, to)} 1s ease-out` : 'none'};
+  animation-fill-mode: forwards;
 `;
 
 const BouncingCircle = styled.div<{ animate: boolean; color: string }>`
@@ -43,15 +49,21 @@ export interface ProgressBarProps extends HTMLAttributes<HTMLDivElement> {
   width: string;
   from: string;
   to: string;
+  transform?: string;
+  marginLeft?: string;
   onAnimationFinish?: () => void;
+  isVisible?: boolean;
 }
 
 const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
-  ({ progress, color, animate, width, from, to, onAnimationFinish, style  }: ProgressBarProps, ref) => {
+  (
+    { progress, color, animate, width, from, to, onAnimationFinish, style, transform, marginLeft, isVisible }: ProgressBarProps,
+    ref
+  ) => {
     const [animateBouncing, setAnimateBouncing] = useState(false);
 
     useEffect(() => {
-      if (progress === 100) {
+      if (isVisible && progress === 100) {
         const timer = setTimeout(() => {
           setAnimateBouncing(true);
           if (onAnimationFinish) {
@@ -62,11 +74,11 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
       } else {
         setAnimateBouncing(false);
       }
-    }, [progress, onAnimationFinish]);
+    }, [isVisible, progress, onAnimationFinish]);
 
     return (
-      <ProgressBarContainer ref={ref} width={width} style={style }>
-        <Progress progress={progress} color={color} from={from} to={to} />
+      <ProgressBarContainer ref={ref} width={width} style={style} transform={transform} marginLeft={marginLeft}>
+        <Progress progress={progress} color={color} from={from} to={to} isVisible={isVisible} />
         {progress === 100 && <BouncingCircle animate={animate !== undefined ? animate : animateBouncing} color={color} />}
       </ProgressBarContainer>
     );
