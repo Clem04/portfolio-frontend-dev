@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 interface SectionIndustriesProps extends HTMLAttributes<HTMLDivElement> {
   borderRight?: string;
+  borderBottom ?: string;
 }
 
 export const Content = styled.div`
@@ -12,6 +13,9 @@ export const Content = styled.div`
   position: relative;
   padding: 64px;
   align-content: space-between;
+  @media (max-width: 414px) {
+    padding: 48px;
+  }
 `
 export const SectionDescription = styled.p`
   width: 60%;
@@ -21,14 +25,20 @@ export const SectionDescription = styled.p`
   font-size: 1.5em;
   line-height: 36px;
   color: #000000;
+  @media (max-width: 414px) {
+    width: 100%;
+  }
 `
 
 export const SectionIndustries = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   height: fit-content;
   margin-top: 32px;
+  @media (max-width: 414px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
 
 export const Industry = styled.div<SectionIndustriesProps>`
@@ -40,4 +50,9 @@ export const Industry = styled.div<SectionIndustriesProps>`
   font-size: 3em;
   color: #000000;
   text-align: center;
+  @media (max-width: 414px) {
+    border-right: none;
+    border-bottom: ${(props) => props.borderBottom || 'auto'};
+    font-size: 2rem;
+  }
 `

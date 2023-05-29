@@ -9,12 +9,6 @@ const Header = styled.p<SkillsSectionNameProps>`
   text-align: ${(props) => props.textAlign}
 `
 
-const Hr = styled.hr`
-  width: 100%;
-  color: black;
-  margin-bottom: 2%;
-`
-
 interface SkillsSectionNameProps extends HTMLAttributes<HTMLDivElement> {
   textAlign: string;
 }
@@ -23,7 +17,6 @@ export default function SkillsSectionName({ name, textAlign }: { name: string; t
   return (
     <>
       <Header textAlign={textAlign}>{name}</Header>
-      <Hr />
     </>
   )
 }

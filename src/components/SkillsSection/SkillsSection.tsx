@@ -7,6 +7,7 @@ import TechnicalCard from "../Cards/TechnicalCard/TechnicalCard"
 import DesignCard from '../Cards/DesignCard/DesignCard'
 import SkillsSectionName from '../Texts/SkillsSectionName'
 import Button from "../Buttons/Button/Button"
+import Hr from '../Hr/Hr'
 import { 
   Content, 
   TopSection, 
@@ -19,7 +20,6 @@ import {
   SubSkills,
   Language,
   DesignSkillsGrid,
-  Hr,
   HrContainer, 
   MobileBottomContainer
 } from './SkillsSection.style'
@@ -79,6 +79,7 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
           />
           <TopSection>
             <SkillsSectionName textAlign="left" name="Technical" />
+            <Hr />
             <SkillsContainerGrid >
               <TechnicalCard 
                 isVisible={isVisible} 
