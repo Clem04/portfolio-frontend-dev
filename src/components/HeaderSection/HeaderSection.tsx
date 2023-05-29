@@ -78,7 +78,6 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
               color={theme.colors.white}
               onAnimationFinish={handleAnimationFinish}
               isVisible={isVisible}
-              margin="0 24px 0 0"
             />
             <Certification className={fadeInCertification ? 'fade-in' : ''}>
               Certified Ui/UX Designer
