@@ -45,14 +45,14 @@ const Container = styled.div<ContainerProps>`
   border: ${(props) => props.border};
   height: ${(props) => props.height?.desktop};
   
-  @media (max-width: 768px) {
-    height: ${(props) => props.height?.tablet};
-    padding: ${(props) => props.padding?.tablet || "auto"};
-  }
-  
   @media (max-width: 414px) {
     height: ${(props) => props.height?.mobile};
     padding: ${(props) => props.padding?.mobile || "auto"};
+  }
+
+  @media (max-width: 1024px) {
+    height: ${(props) => props.height?.tablet};
+    padding: ${(props) => props.padding?.tablet || "auto"};
   }
 }`;
 

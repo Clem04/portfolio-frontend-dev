@@ -23,17 +23,19 @@ export const SectionDescription = styled.p`
   color: #000000;
   @media (max-width: 414px) {
     width: 100%;
+    font-size: 1em;
+    line-height: 24px;
   }
 `
 
-export const SectionIndustries = styled.div`
+export const GridIndustries = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   height: fit-content;
   margin-top: 32px;
   @media (max-width: 414px) {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 `
 
@@ -43,12 +45,14 @@ export const Industry = styled.div<SectionIndustriesProps>`
   font-family: 'Karantina';
   font-style: normal;
   font-weight: 700;
-  font-size: 3em;
+  font-size: 3rem;
   color: #000000;
   text-align: center;
   @media (max-width: 414px) {
     border-right: none;
     border-bottom: ${(props) => props.borderBottom || 'auto'};
-    font-size: 2rem;
+  }
+  @media (max-width: 1024px) {
+    font-size: 1.4rem;
   }
 `

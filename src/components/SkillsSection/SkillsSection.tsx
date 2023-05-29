@@ -1,7 +1,7 @@
 import { HTMLAttributes, RefObject } from "react"
 import Section from '../Sections/Section/Section'
 import { InnerSection } from '../Sections/InnerSection/InnerSection'
-import SectionName from "../Texts/SectionName"
+import { SectionName } from "../Texts/SectionName"
 import ProgressBar from '../ProgressBar/ProgressBar'
 import TechnicalCard from "../Cards/TechnicalCard/TechnicalCard"
 import DesignCard from '../Cards/DesignCard/DesignCard'
@@ -70,7 +70,21 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
         <Content>
-          <SectionName label="Skills" textAlign="left" Left="-88px" Top="-88px" />
+          <SectionName 
+            textAlign="left" 
+            top={{
+              desktop: "-88px",
+              tablet: "-69px",
+              mobile: "-47px"
+            }}
+            left={{
+              desktop: "-88px",
+              tablet: "-69px",
+              mobile: "-36px"
+            }}
+          >
+            Skills
+          </SectionName>
           <ProgressBar
             progress={100}
             width="356px"
@@ -81,7 +95,7 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
           />
           <TopSection>
             <SkillsSectionName textAlign="left" name="Technical" />
-            <Hr />
+            <Hr width="100%" />
             <SkillsContainerGrid >
               <TechnicalCard 
                 isVisible={isVisible} 
@@ -149,13 +163,13 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
             <BottomRightSection>
               <SubSkills>
                 <Header>Language</Header>
-                <HrContainer><Hr /></HrContainer>
+                <HrContainer><Hr width="100%" /></HrContainer>
                 <Language style={{ marginTop: "24px"}}>English</Language>
                 <Language>French</Language>
               </SubSkills>
               <SubSkills>
                 <Header textAlign="right">Design</Header>
-                <HrContainer><Hr /></HrContainer>
+                <HrContainer><Hr width="100%" /></HrContainer>
                 <DesignSkillsGrid>
                   <DesignCard skill="Wireframe Prototypes">
                     <WireframesIcon />

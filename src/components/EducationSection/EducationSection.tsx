@@ -1,7 +1,7 @@
 import { HTMLAttributes, RefObject } from "react";
 import Section from '../Sections/Section/Section';
 import { InnerSection } from '../Sections/InnerSection/InnerSection';
-import SectionName from "../Texts/SectionName"
+import { SectionName } from "../Texts/SectionName"
 import { Content, DegreesGrid, DegreeCard, DegreeType, Degree  } from './EducationSection.style'
 
 // Images
@@ -32,13 +32,27 @@ function EducationSection({ theme, dataTestId, sectionRef, isVisible }: Educatio
     >
       <InnerSection
         padding={{
-          desktop: "32px",
+          tablet: "0 0 40px 0",
           mobile: "24px"
         }}
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
         <Content>
-          <SectionName label="Education" textAlign="left" Top="-38px" Left="-40px"/>
+          <SectionName 
+            textAlign="left"
+            top={{
+              desktop: "-38px",
+              tablet: "-18px",
+              mobile: "-21px"
+            }}
+            left={{
+              desktop: "-40px",
+              tablet: "-21px",
+              mobile: "-21px"
+            }}
+          >
+            Education
+          </SectionName>
           <DegreesGrid>
             <DegreeCard>
               <TCUImage />

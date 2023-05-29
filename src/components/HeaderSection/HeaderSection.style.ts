@@ -47,7 +47,7 @@ export const Certification = styled.p`
     animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 1024px) {
     margin: none;
     width: 100%;
     text-align: right;

@@ -67,6 +67,11 @@ export const SkillsContainerGrid = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 32px;
   }
+  @media (min-width: 768px) {
+    margin: 32px 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 32px;
+  }
 `
 
 export const HrContainer = styled.div`
@@ -146,5 +151,6 @@ export const MobileBottomContainer = styled.div`
   @media (max-width: 414px) {
     width 100%;
     display: block;
+    margin: 16px 0 32px 0;
   }
 `
