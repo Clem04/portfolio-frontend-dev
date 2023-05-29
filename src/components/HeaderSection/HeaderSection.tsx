@@ -54,11 +54,14 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
       <Section
         ref={sectionRef}
         dataTestId={dataTestId}
-        backgroundColor={theme.colors.primary}
         {...rest}
         height="100vh"
       >
         <InnerSection
+          height={{
+            desktop: "80vh",
+            mobile: "80vh"
+          }}
           padding={{
             desktop: "80px 80px 24px 80px",
             mobile: "24px"

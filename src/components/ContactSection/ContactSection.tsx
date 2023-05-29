@@ -29,13 +29,13 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
     <Section 
       ref={sectionRef}
       dataTestId={dataTestId} 
-      backgroundColor={theme.colors.white}
-      margin="0 0 100px 0"
+      margin="50px 0 100px 0"
     >
       <InnerSection
         border='2px solid #063320'
         padding={{
-          desktop: "32px"
+          desktop: "32px",
+          mobile: "24px"
         }}
       >
         <Content>

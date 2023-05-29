@@ -1,13 +1,13 @@
 import { HTMLAttributes, RefObject } from "react"
 import Section from '../Sections/Section/Section'
 import { InnerSection } from '../Sections/InnerSection/InnerSection'
-import SectionName from "../Texts/SectionName"
-import { 
-  Content,
-  SectionDescription,
-  SectionIndustries,
-  Industry,
-} from './IndustriesSection.style'
+// import SectionName from "../Texts/SectionName"
+// import { 
+//   Content,
+//   SectionDescription,
+//   SectionIndustries,
+//   Industry,
+// } from './IndustriesSection.style'
 
 interface Theme {
   colors: {
@@ -27,14 +27,17 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
   return (
     <Section 
       ref={sectionRef}
-      dataTestId={dataTestId} 
-      backgroundColor={theme.colors.white}
-      margin="100px 0"
+      dataTestId={dataTestId}
+      margin="50px 0"
     >
       <InnerSection
+        padding={{
+          desktop: "32px",
+          mobile: "24px"
+        }}
         backgroundColor="#6DC19E"
       >
-        <Content>
+        {/* <Content>
           <SectionName label="Industries" textAlign="right" Top="-42px" Right="-28px" />
           <SectionDescription>
             On my resume, 
@@ -49,7 +52,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
             <Industry borderRight="1px solid black" borderBottom="1px solid black">finance</Industry>
             <Industry>health</Industry>
           </SectionIndustries>
-        </Content>
+        </Content> */}
       </InnerSection>
     </Section>
   ) 

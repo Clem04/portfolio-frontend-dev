@@ -59,14 +59,14 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
     <Section 
       ref={sectionRef} 
       dataTestId={dataTestId} 
-      backgroundColor={theme.colors.white}
-      margin="100px 0"
+      margin="50px 0"
     >
       <InnerSection
         padding={{
           desktop: "48px",
-          mobile: "16px"
+          mobile: "24px"
         }}
+        backgroundColor={theme.colors.white}
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
         <Content>

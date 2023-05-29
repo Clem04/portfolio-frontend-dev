@@ -28,10 +28,13 @@ function EducationSection({ theme, dataTestId, sectionRef, isVisible }: Educatio
     <Section
       ref={sectionRef}
       dataTestId={dataTestId} 
-      backgroundColor={theme.colors.white}
-      margin="100px 0"
+      margin="50px 0"
     >
       <InnerSection
+        padding={{
+          desktop: "32px",
+          mobile: "24px"
+        }}
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
         <Content>

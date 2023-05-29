@@ -11,11 +11,7 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  padding: 64px;
   align-content: space-between;
-  @media (max-width: 414px) {
-    padding: 48px;
-  }
 `
 export const SectionDescription = styled.p`
   width: 60%;
