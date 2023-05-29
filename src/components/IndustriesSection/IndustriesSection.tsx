@@ -6,7 +6,7 @@ import {
   Content,
   SectionDescription,
   SectionIndustries,
-  Industry
+  Industry,
 } from './IndustriesSection.style'
 
 interface Theme {
@@ -32,10 +32,6 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
       margin="100px 0"
     >
       <InnerSection
-        height={{
-          tablet: '400px',
-          mobile: '300px',
-        }}
         backgroundColor="#6DC19E"
       >
         <Content>
@@ -49,8 +45,8 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
             <br /> I have worked in: 
           </SectionDescription>
           <SectionIndustries>
-            <Industry borderRight="1px solid black">e-commerce</Industry>
-            <Industry borderRight="1px solid black">finance</Industry>
+            <Industry borderRight="1px solid black" borderBottom="1px solid black">e-commerce</Industry>
+            <Industry borderRight="1px solid black" borderBottom="1px solid black">finance</Industry>
             <Industry>health</Industry>
           </SectionIndustries>
         </Content>

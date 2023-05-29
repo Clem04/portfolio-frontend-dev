@@ -123,19 +123,12 @@ export const Language = styled.p`
   line-height: 1.5em;
 `
 
-// Break-line
 export const HrContainer = styled.div`
   display: none;
   @media (max-width: 414px) {
     width 100%;
     display: block;
   }
-`
-
-export const Hr = styled.hr`
-  width: 100%;
-  color: black;
-  margin-bottom: 2%;
 `
 
 // Button
