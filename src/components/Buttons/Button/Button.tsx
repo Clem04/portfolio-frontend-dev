@@ -8,7 +8,7 @@ interface ButtonProps extends HTMLAttributes<HTMLDivElement> {
 
 const StyledButton = styled.button<ButtonProps>`
   width: ${(props) => props.width};
-  margin-top: 8px;
+  padding: 16px 24px;
   background: #063320;
   border: 2px solid #063320;
   border-radius: 50px;

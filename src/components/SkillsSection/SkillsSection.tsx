@@ -4,22 +4,24 @@ import { InnerSection } from '../Sections/InnerSection/InnerSection'
 import SectionName from "../Texts/SectionName"
 import ProgressBar from '../ProgressBar/ProgressBar'
 import TechnicalCard from "../Cards/TechnicalCard/TechnicalCard"
+import DesignCard from '../Cards/DesignCard/DesignCard'
+import SkillsSectionName from '../Texts/SkillsSectionName'
+import Button from "../Buttons/Button/Button"
 import { 
   Content, 
   TopSection, 
   Header, 
-  Hr, 
-  SkillsContainer,
+  SkillsContainerGrid ,
   BottomSection,
-  ButtonContainer,
+  DesktopButtonContainer,
   ResumeTitle,
-  ResumeButton,
   BottomRightSection,
   SubSkills,
   Language,
   DesignSkillsGrid,
-  DesignSkillCard,
-  DesignSkillName
+  Hr,
+  HrContainer, 
+  MobileBottomContainer
 } from './SkillsSection.style'
 
 // Icons
@@ -58,15 +60,9 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
       ref={sectionRef} 
       dataTestId={dataTestId} 
       backgroundColor={theme.colors.white}
-      margin="50px 0"
-      height="100vh"
+      margin="100px 0"
     >
       <InnerSection
-        height={{
-          desktop: '600px',
-          tablet: '400px',
-          mobile: '300px',
-        }}
         padding="48px"
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
@@ -79,12 +75,11 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
             to="0"
             color={theme.colors.primary}
             isVisible={isVisible}
-            margin="24px 0 0 0"
+            margin="24px 0"
           />
           <TopSection>
-            <Header>Technical</Header>
-            <Hr />
-            <SkillsContainer>
+            <SkillsSectionName textAlign="left" name="Technical" />
+            <SkillsContainerGrid >
               <TechnicalCard 
                 isVisible={isVisible} 
                 progressColor={theme.colors.primary} 
@@ -141,60 +136,48 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
               >
                 <RubyOnRailsIcon />
               </TechnicalCard>
-            </SkillsContainer>
+            </SkillsContainerGrid >
           </TopSection>
           <BottomSection>
-            <ButtonContainer>
+            <DesktopButtonContainer>
               <ResumeTitle>Download Me!</ResumeTitle>
-              <ResumeButton>RESUME</ResumeButton>
-            </ButtonContainer>
+              <Button width="100%">Resume</Button>
+            </DesktopButtonContainer>
             <BottomRightSection>
               <SubSkills>
                 <Header>Language</Header>
+                <HrContainer><Hr /></HrContainer>
                 <Language style={{ marginTop: "24px"}}>English</Language>
                 <Language>French</Language>
               </SubSkills>
               <SubSkills>
                 <Header textAlign="right">Design</Header>
+                <HrContainer><Hr /></HrContainer>
                 <DesignSkillsGrid>
-                  <DesignSkillCard>
+                  <DesignCard skill="Wireframe Prototypes">
                     <WireframesIcon />
-                    <DesignSkillName>
-                      Wireframe Prototypes
-                    </DesignSkillName>
-                  </DesignSkillCard>
-                  <DesignSkillCard>
+                  </DesignCard>
+                  <DesignCard skill="InVision">
                     <InVisionIcon />
-                    <DesignSkillName>
-                      InVision
-                    </DesignSkillName>
-                  </DesignSkillCard>
-                  <DesignSkillCard>
+                  </DesignCard>
+                  <DesignCard skill="DesignPrincipls & Design Systems">
                     <DesignPrincipleIcon />
-                    <DesignSkillName>
-                      DesignPrincipls & Design Systems
-                    </DesignSkillName>
-                  </DesignSkillCard>
-                  <DesignSkillCard>
+                  </DesignCard>
+                  <DesignCard skill="Figma">
                     <FigmaIcon />
-                    <DesignSkillName>
-                      Figma
-                    </DesignSkillName>
-                  </DesignSkillCard>
-                  <DesignSkillCard>
+                  </DesignCard>
+                  <DesignCard skill="Sketch Design">
                     <SketchIcon />
-                    <DesignSkillName>
-                      Sketch Design
-                    </DesignSkillName>
-                  </DesignSkillCard>
-                  <DesignSkillCard>
+                  </DesignCard>
+                  <DesignCard skill="Responsive Design">
                     <ResponsiveIcon />
-                    <DesignSkillName>
-                      Resonsive Design
-                    </DesignSkillName>
-                  </DesignSkillCard>
+                  </DesignCard>
                 </DesignSkillsGrid>
               </SubSkills>
+              <MobileBottomContainer>
+                <ResumeTitle>Download Me!</ResumeTitle>
+                <Button width="100%">Resume</Button>
+              </MobileBottomContainer>
             </BottomRightSection>
           </BottomSection>
         </Content>

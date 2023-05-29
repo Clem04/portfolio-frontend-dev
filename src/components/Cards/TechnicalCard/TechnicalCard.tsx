@@ -24,6 +24,12 @@ const Percentage = styled.p`
   margin-top: 24px;
 `
 
+const ProgressContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
 interface TechnicalCardProps extends HTMLAttributes<HTMLDivElement> {
   isVisible: boolean;
   children: ReactNode;
@@ -35,13 +41,15 @@ interface TechnicalCardProps extends HTMLAttributes<HTMLDivElement> {
 export default function TechnicalCard({ isVisible, progressColor, skillLabel, percentage, children }: TechnicalCardProps) {
   return (
     <Card>
-        <CircleProgress 
-          percentage={percentage} 
-          isVisible={isVisible} 
-          progressColor={progressColor}
-        >
-          {children}
-        </CircleProgress>
+        <ProgressContainer>
+          <CircleProgress 
+            percentage={percentage} 
+            isVisible={isVisible} 
+            progressColor={progressColor}
+          >
+            {children}
+          </CircleProgress>
+        </ProgressContainer>
         <SkillName>{skillLabel}</SkillName>
         <Percentage>{percentage}%</Percentage>
     </Card>
