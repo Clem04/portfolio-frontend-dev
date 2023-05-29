@@ -2,10 +2,10 @@ import React from 'react';
 import styled, { CSSProperties } from 'styled-components';
 
 interface InnerSectionProps {
-  height: {
+  height?: {
     desktop?: string;
-    tablet: string;
-    mobile: string;
+    tablet?: string;
+    mobile?: string;
   };
   backgroundColor?: string;
   shadow?: string;
@@ -19,10 +19,10 @@ interface ContainerProps {
   shadow?: string;
   border?: string;
   padding?: string;
-  height: {
+  height?: {
     desktop?: CSSProperties['height'];
-    tablet: CSSProperties['height'];
-    mobile: CSSProperties['height'];
+    tablet?: CSSProperties['height'];
+    mobile?: CSSProperties['height'];
   };
 }
 
@@ -35,14 +35,14 @@ const Container = styled.div<ContainerProps>`
   background-color: ${(props) => props.backgroundColor};
   box-shadow: ${(props) => props.shadow};
   border: ${(props) => props.border};
-  height: ${(props) => props.height.desktop};
+  height: ${(props) => props.height?.desktop};
   
   @media (max-width: 768px) {
-    height: ${(props) => props.height.tablet};
+    height: ${(props) => props.height?.tablet};
   }
   
   @media (max-width: 414px) {
-    height: ${(props) => props.height.mobile};
+    height: ${(props) => props.height?.mobile};
   }
 }`;
 
