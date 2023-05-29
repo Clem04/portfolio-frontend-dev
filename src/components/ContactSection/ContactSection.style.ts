@@ -23,6 +23,7 @@ export const LinkedInDiv = styled.div`
 
 export const SectionHeader = styled.p`
   width: 100%;
+  margin: 16px 0;
   height: fit-content;
   font-family: 'League Gothic';
   font-style: normal;
@@ -42,4 +43,12 @@ export const Text = styled.p`
   line-height: 24px;
   text-align: center;
   color: #000000;
+`
+
+export const ButtonContainer = styled.div`
+  width: 20%;
+  margin: 24px 0;
+  @media (max-width: 414px) {
+    width: 100%;
+  }
 `

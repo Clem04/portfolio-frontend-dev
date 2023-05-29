@@ -1,7 +1,7 @@
 import { HTMLAttributes, RefObject } from "react";
 import Section from '../Sections/Section/Section';
 import { InnerSection } from '../Sections/InnerSection/InnerSection';
-import { Content, SectionHeader, IconContainer, TopSection, LinkedInDiv, Text } from './ContactSection.style'
+import { Content, SectionHeader, IconContainer, TopSection, LinkedInDiv, Text, ButtonContainer } from './ContactSection.style'
 import ProgressBar from '../ProgressBar/ProgressBar'
 import Button from '../Buttons/Button/Button'
 
@@ -33,11 +33,6 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
       margin="0 0 100px 0"
     >
       <InnerSection
-        height={{
-          desktop: '600px',
-          tablet: '400px',
-          mobile: '300px',
-        }}
         border='2px solid #063320'
         padding="32px"
       >
@@ -56,12 +51,13 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
               to="0"
               color={theme.colors.primary}
               transform="rotate(180deg)"
-              margin="0 0 0 16px"
               isVisible={isVisible}
             />
           </TopSection>
           <SectionHeader>Get in Touch!</SectionHeader>
-          <Button width="20%">CONTACT</Button>
+          <ButtonContainer>
+            <Button width="100%">CONTACT</Button>
+          </ButtonContainer>
           <Text>
             Thank you for visiting my website! I'm thrilled to connect with you regarding the frontend software engineer role. I created this website to showcase my frontend development skills, and I believe it's a great platform to demonstrate my abilities.<br />
             <br />

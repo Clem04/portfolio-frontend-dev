@@ -69,6 +69,14 @@ export const SkillsContainerGrid = styled.div`
   }
 `
 
+export const HrContainer = styled.div`
+  display: none;
+  @media (max-width: 414px) {
+    width 100%;
+    display: block;
+  }
+`
+
 export const DesignSkillsGrid = styled.div`
   display: grid;
   margin-top: 24px;
@@ -121,14 +129,6 @@ export const Language = styled.p`
   font-weight: 400;
   font-size: 0.7em;
   line-height: 1.5em;
-`
-
-export const HrContainer = styled.div`
-  display: none;
-  @media (max-width: 414px) {
-    width 100%;
-    display: block;
-  }
 `
 
 // Button

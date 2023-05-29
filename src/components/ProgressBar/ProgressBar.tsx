@@ -4,7 +4,6 @@ import { slidingAnimation, GelatineAnimation } from '../Shared/Animation';
 
 const ProgressBarContainer = styled.div<{ 
   width: string, 
-  margin: string, 
   transform: string | 'none' | undefined }
 >`
   width: ${({ width }) => width};
@@ -13,7 +12,6 @@ const ProgressBarContainer = styled.div<{
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin: ${(props) => props.margin};
   transform: ${(props) => props.transform || ""};
 `;
 
@@ -60,7 +58,6 @@ export interface ProgressBarProps extends HTMLAttributes<HTMLDivElement> {
   from: string;
   to: string;
   transform?: string;
-  margin: string;
   onAnimationFinish?: () => void;
   isVisible: boolean;
 }
@@ -75,7 +72,6 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
       to, 
       onAnimationFinish, 
       transform, 
-      margin, 
       isVisible 
     }: ProgressBarProps,
     ref) => {
@@ -100,7 +96,6 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
         ref={ref} 
         width={width} 
         transform={transform} 
-        margin={margin}
       >
         <Progress 
           progress={progress} 

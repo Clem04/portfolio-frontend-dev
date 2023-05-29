@@ -34,6 +34,7 @@ export const CertificationContainer = styled.div`
 `;
 
 export const Certification = styled.p`
+  margin: 0 0 0 24px;
   font-family: 'Inria Serif';
   font-style: normal;
   font-weight: 100;
@@ -47,6 +48,7 @@ export const Certification = styled.p`
   }
 
   @media (max-width: 414px) {
+    margin: none;
     width: 100%;
     text-align: right;
   }

@@ -75,7 +75,6 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
             to="0"
             color={theme.colors.primary}
             isVisible={isVisible}
-            margin="24px 0"
           />
           <TopSection>
             <SkillsSectionName textAlign="left" name="Technical" />
