@@ -34,7 +34,9 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
     >
       <InnerSection
         border='2px solid #063320'
-        padding="32px"
+        padding={{
+          desktop: "32px"
+        }}
       >
         <Content>
           <TopSection>

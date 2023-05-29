@@ -59,12 +59,10 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
         height="100vh"
       >
         <InnerSection
-          height={{
-            desktop: '80vh',
-            tablet: '72vh',
-            mobile: '64vh',
+          padding={{
+            desktop: "80px 80px 24px 80px",
+            mobile: "24px"
           }}
-          padding="80px 80px 24px 80px"
           border={`1px solid ${theme.colors.white}`}
         >
           <Name>Clem Paiement.</Name>

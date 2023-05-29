@@ -63,7 +63,10 @@ function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps
       margin="100px 0"
     >
       <InnerSection
-        padding="48px"
+        padding={{
+          desktop: "48px",
+          mobile: "16px"
+        }}
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
         <Content>
