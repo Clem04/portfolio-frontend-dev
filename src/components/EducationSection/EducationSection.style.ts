@@ -9,13 +9,20 @@ export const Content = styled.div`
   width: 100%;
   position: relative;
   padding: 64px;
+  @media (max-width: 414px) {
+    padding: 48px;
+  }
 `
 
 export const DegreesGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 10px;
   margin-top: 32px;
+  @media (max-width: 414px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 64px;
+  }
 `
 
 export const DegreeCard = styled.div`

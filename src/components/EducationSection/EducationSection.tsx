@@ -32,10 +32,6 @@ function EducationSection({ theme, dataTestId, sectionRef, isVisible }: Educatio
       margin="100px 0"
     >
       <InnerSection
-        height={{
-          tablet: '400px',
-          mobile: '300px',
-        }}
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
         <Content>
