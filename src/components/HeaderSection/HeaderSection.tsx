@@ -54,17 +54,19 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
       <Section
         ref={sectionRef}
         dataTestId={dataTestId}
-        backgroundColor={theme.colors.primary}
         {...rest}
         height="100vh"
+        margin="0 0 50px 0"
       >
         <InnerSection
           height={{
-            desktop: '80vh',
-            tablet: '72vh',
-            mobile: '64vh',
+            desktop: "80vh",
+            mobile: "80vh"
           }}
-          padding="80px 80px 24px 80px"
+          padding={{
+            desktop: "80px 80px 24px 80px",
+            mobile: "24px"
+          }}
           border={`1px solid ${theme.colors.white}`}
         >
           <Name>Clem Paiement.</Name>
@@ -72,7 +74,11 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           <CertificationContainer>
             <ProgressBar
               progress={100}
-              width="500px"
+              width={{
+                desktop: "50%",
+                tablet: "70%",
+                mobile: "80%"
+              }}
               from="-500px" 
               to="0"
               color={theme.colors.white}

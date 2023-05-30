@@ -1,6 +1,7 @@
 import { HTMLAttributes, ReactNode  } from "react";
 import styled from 'styled-components';
 import CircleProgress from '../../CircleProgress/CircleProgress';
+import Hr from "../../Hr/Hr";
 
 const Card = styled.div`
   width: 100%;
@@ -21,7 +22,7 @@ const Percentage = styled.p`
   font-size: 1em;
   text-align: center;
   color: #063320;
-  margin-top: 24px;
+  margin-top: 8px;
 `
 
 const ProgressContainer = styled.div`
@@ -51,6 +52,7 @@ export default function TechnicalCard({ isVisible, progressColor, skillLabel, pe
           </CircleProgress>
         </ProgressContainer>
         <SkillName>{skillLabel}</SkillName>
+        <Hr width="20%" />
         <Percentage>{percentage}%</Percentage>
     </Card>
   )

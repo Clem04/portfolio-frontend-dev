@@ -39,10 +39,14 @@ export const Text = styled.p`
   font-family: 'Kai';
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 24px;
   text-align: center;
   color: #000000;
+  @media (max-width: 414px) {
+    text-align: left;
+    padding: 0px;
+  }
 `
 
 export const ButtonContainer = styled.div`

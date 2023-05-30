@@ -11,14 +11,22 @@ interface InnerSectionProps {
   shadow?: string;
   border?: string;
   children?: React.ReactNode;
-  padding?: string;
+  padding?: {
+    desktop?: string;
+    tablet?: string;
+    mobile?: string;
+  };
 }
 
 interface ContainerProps {
   backgroundColor?: string;
   shadow?: string;
   border?: string;
-  padding?: string;
+  padding?: {
+    desktop?: CSSProperties['padding'];
+    tablet?: CSSProperties['padding'];
+    mobile?: CSSProperties['padding'];
+  };
   height?: {
     desktop?: CSSProperties['height'];
     tablet?: CSSProperties['height'];
@@ -28,7 +36,7 @@ interface ContainerProps {
 
 const Container = styled.div<ContainerProps>`
   width: 100%;
-  padding: ${(props) => props.padding || "auto"};
+  padding: ${(props) => props.padding?.desktop || "auto"};
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -37,12 +45,14 @@ const Container = styled.div<ContainerProps>`
   border: ${(props) => props.border};
   height: ${(props) => props.height?.desktop};
   
-  @media (max-width: 768px) {
-    height: ${(props) => props.height?.tablet};
-  }
-  
   @media (max-width: 414px) {
     height: ${(props) => props.height?.mobile};
+    padding: ${(props) => props.padding?.mobile || "auto"};
+  }
+
+  @media (max-width: 1024px) {
+    height: ${(props) => props.height?.tablet};
+    padding: ${(props) => props.padding?.tablet || "auto"};
   }
 }`;
 

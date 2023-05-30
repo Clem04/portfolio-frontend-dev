@@ -12,6 +12,9 @@ export const Content = styled.div`
   @media (max-width: 414px) {
     padding: 48px;
   }
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
 `
 
 export const DegreesGrid = styled.div`
@@ -29,6 +32,12 @@ export const DegreeCard = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  @media (max-width: 414px) {
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    width: 23vw;
+  }
 `
 
 export const DegreeType = styled.p<SectionEducationProps>`

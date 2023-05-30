@@ -1,12 +1,17 @@
+import { HTMLAttributes } from "react";
 import styled from 'styled-components';
 
-const Line = styled.hr`
-  width: 100%;
+const Line = styled.hr<HrProps>`
+  width: ${(props) => props.width};
   color: black;
 `
 
-export default function Hr() {
+interface HrProps extends HTMLAttributes<HTMLDivElement> {
+   width: string;
+}
+
+export default function Hr({ width }: HrProps) {
   return (
-    <Line />
+    <Line width={width} />
   )
 }

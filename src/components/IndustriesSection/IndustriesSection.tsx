@@ -1,11 +1,11 @@
 import { HTMLAttributes, RefObject } from "react"
 import Section from '../Sections/Section/Section'
 import { InnerSection } from '../Sections/InnerSection/InnerSection'
-import SectionName from "../Texts/SectionName"
+import { SectionName } from "../Texts/SectionName"
 import { 
   Content,
   SectionDescription,
-  SectionIndustries,
+  GridIndustries,
   Industry,
 } from './IndustriesSection.style'
 
@@ -27,15 +27,31 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
   return (
     <Section 
       ref={sectionRef}
-      dataTestId={dataTestId} 
-      backgroundColor={theme.colors.white}
-      margin="100px 0"
+      dataTestId={dataTestId}
+      margin="50px 0"
     >
       <InnerSection
+        padding={{
+          desktop: "32px",
+          mobile: "24px"
+        }}
         backgroundColor="#6DC19E"
       >
         <Content>
-          <SectionName label="Industries" textAlign="right" Top="-42px" Right="-28px" />
+          <SectionName textAlign="right"
+            top={{
+              tablet: "-55px",
+              desktop: "-74px",
+              mobile: "-48px"
+            }}
+            right={{
+              desktop: "-54px",
+              tablet: "-61px",
+              mobile: "-32px"
+            }}
+          >
+            Industries
+          </SectionName>
           <SectionDescription>
             On my resume, 
             you will find my experience 
@@ -44,11 +60,11 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
             sectors as well. Here are some of the industries 
             <br /> I have worked in: 
           </SectionDescription>
-          <SectionIndustries>
+          <GridIndustries>
             <Industry borderRight="1px solid black" borderBottom="1px solid black">e-commerce</Industry>
             <Industry borderRight="1px solid black" borderBottom="1px solid black">finance</Industry>
             <Industry>health</Industry>
-          </SectionIndustries>
+          </GridIndustries>
         </Content>
       </InnerSection>
     </Section>

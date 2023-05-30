@@ -41,7 +41,7 @@ function App() {
         setIsVisible((prevState) => ({
           ...prevState,
           header: isIntersecting,
-        }));
+        }));    
       }
       else if (target === skillsSectionRef.current) {
         setIsVisible((prevState) => ({
@@ -108,6 +108,7 @@ function App() {
           dataTestId="skills-section"
           sectionRef={skillsSectionRef}
           isVisible={isVisible.skills}
+          ref={skillsSectionRef}
         />
         <IndustriesSection 
           theme={theme} 
