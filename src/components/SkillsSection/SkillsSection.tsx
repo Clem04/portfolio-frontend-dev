@@ -1,4 +1,4 @@
-import { HTMLAttributes, RefObject } from "react"
+import { forwardRef, HTMLAttributes, RefObject } from "react"
 import Section from '../Sections/Section/Section'
 import { InnerSection } from '../Sections/InnerSection/InnerSection'
 import { SectionName } from "../Texts/SectionName"
@@ -53,154 +53,158 @@ interface SkillsProps extends HTMLAttributes<HTMLDivElement> {
   isVisible: boolean;
 }
 
-function SkillsSection({ theme, dataTestId, sectionRef, isVisible }: SkillsProps) {
-
-  return (
-    <Section 
-      ref={sectionRef} 
-      dataTestId={dataTestId} 
-      margin="50px 0"
-    >
-      <InnerSection
-        padding={{
-          desktop: "48px",
-          mobile: "24px"
-        }}
-        backgroundColor={theme.colors.white}
-        shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
+const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(
+  ({ theme, dataTestId, isVisible, sectionRef }, ref) => {
+    return (
+      <Section 
+        ref={sectionRef || ref} 
+        dataTestId={dataTestId} 
+        margin="50px 0"
       >
-        <Content>
-          <SectionName 
-            textAlign="left" 
-            top={{
-              desktop: "-88px",
-              tablet: "-69px",
-              mobile: "-47px"
-            }}
-            left={{
-              desktop: "-88px",
-              tablet: "-69px",
-              mobile: "-36px"
-            }}
-          >
-            Skills
-          </SectionName>
-          <ProgressBar
-            progress={100}
-            width="356px"
-            from="-356px" 
-            to="0"
-            color={theme.colors.primary}
-            isVisible={isVisible}
-          />
-          <TopSection>
-            <SkillsSectionName textAlign="left" name="Technical" />
-            <Hr width="100%" />
-            <SkillsContainerGrid >
-              <TechnicalCard 
-                isVisible={isVisible} 
-                progressColor={theme.colors.primary} 
-                skillLabel="React Js" 
-                percentage={90}
-              >
-                <ReactIcon />
-              </TechnicalCard>
-              <TechnicalCard 
-                isVisible={isVisible} 
-                progressColor={theme.colors.primary} 
-                skillLabel="React Testing Library" 
-                percentage={80}
-              >
-                <ReactTestingIcon />
-              </TechnicalCard>
-              <TechnicalCard 
-                isVisible={isVisible} 
-                progressColor={theme.colors.primary} 
-                skillLabel="Javascript" 
-                percentage={90}
-              >
-                <JavascriptIcon />
-              </TechnicalCard>
-              <TechnicalCard 
-                isVisible={isVisible} 
-                progressColor={theme.colors.primary} 
-                skillLabel="HTML5" 
-                percentage={95}
-              >
-                <HTMLIcon />
-              </TechnicalCard>
-              <TechnicalCard 
-                isVisible={isVisible} 
-                progressColor={theme.colors.primary} 
-                skillLabel="CSS" 
-                percentage={90}
-              >
-                <CSSIcon />
-              </TechnicalCard>
-              <TechnicalCard 
-                isVisible={isVisible} 
-                progressColor={theme.colors.primary} 
-                skillLabel="Typescript" 
-                percentage={80}
-              >
-                <TypescriptIcon />
-              </TechnicalCard>
-              <TechnicalCard 
-                isVisible={isVisible} 
-                progressColor={theme.colors.primary} 
-                skillLabel="Ruby on Rails" 
-                percentage={70}
-              >
-                <RubyOnRailsIcon />
-              </TechnicalCard>
-            </SkillsContainerGrid >
-          </TopSection>
-          <BottomSection>
-            <DesktopButtonContainer>
-              <ResumeTitle>Download Me!</ResumeTitle>
-              <Button width="100%">Resume</Button>
-            </DesktopButtonContainer>
-            <BottomRightSection>
-              <SubSkills>
-                <Header>Language</Header>
-                <HrContainer><Hr width="100%" /></HrContainer>
-                <Language style={{ marginTop: "24px"}}>English</Language>
-                <Language>French</Language>
-              </SubSkills>
-              <SubSkills>
-                <Header textAlign="right">Design</Header>
-                <HrContainer><Hr width="100%" /></HrContainer>
-                <DesignSkillsGrid>
-                  <DesignCard skill="Wireframe Prototypes">
-                    <WireframesIcon />
-                  </DesignCard>
-                  <DesignCard skill="InVision">
-                    <InVisionIcon />
-                  </DesignCard>
-                  <DesignCard skill="DesignPrincipls & Design Systems">
-                    <DesignPrincipleIcon />
-                  </DesignCard>
-                  <DesignCard skill="Figma">
-                    <FigmaIcon />
-                  </DesignCard>
-                  <DesignCard skill="Sketch Design">
-                    <SketchIcon />
-                  </DesignCard>
-                  <DesignCard skill="Responsive Design">
-                    <ResponsiveIcon />
-                  </DesignCard>
-                </DesignSkillsGrid>
-              </SubSkills>
-              <MobileBottomContainer>
+        <InnerSection
+          padding={{
+            desktop: "48px",
+            mobile: "24px"
+          }}
+          backgroundColor={theme.colors.white}
+          shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
+        >
+          <Content>
+            <SectionName 
+              textAlign="left" 
+              top={{
+                desktop: "-88px",
+                tablet: "-69px",
+                mobile: "-47px"
+              }}
+              left={{
+                desktop: "-88px",
+                tablet: "-69px",
+                mobile: "-36px"
+              }}
+            >
+              Skills
+            </SectionName>
+            <ProgressBar
+              progress={100}
+              width={{
+                desktop: "30%",
+                mobile: "72%"
+              }}
+              from="-356px" 
+              to="0"
+              color={theme.colors.primary}
+              isVisible={isVisible}
+            />
+            <TopSection>
+              <SkillsSectionName textAlign="left" name="Technical" />
+              <Hr width="100%" />
+              <SkillsContainerGrid >
+                <TechnicalCard 
+                  isVisible={isVisible} 
+                  progressColor={theme.colors.primary} 
+                  skillLabel="React Js" 
+                  percentage={90}
+                >
+                  <ReactIcon />
+                </TechnicalCard>
+                <TechnicalCard 
+                  isVisible={isVisible} 
+                  progressColor={theme.colors.primary} 
+                  skillLabel="React Testing Library" 
+                  percentage={80}
+                >
+                  <ReactTestingIcon />
+                </TechnicalCard>
+                <TechnicalCard 
+                  isVisible={isVisible} 
+                  progressColor={theme.colors.primary} 
+                  skillLabel="Javascript" 
+                  percentage={90}
+                >
+                  <JavascriptIcon />
+                </TechnicalCard>
+                <TechnicalCard 
+                  isVisible={isVisible} 
+                  progressColor={theme.colors.primary} 
+                  skillLabel="HTML5" 
+                  percentage={95}
+                >
+                  <HTMLIcon />
+                </TechnicalCard>
+                <TechnicalCard 
+                  isVisible={isVisible} 
+                  progressColor={theme.colors.primary} 
+                  skillLabel="CSS" 
+                  percentage={90}
+                >
+                  <CSSIcon />
+                </TechnicalCard>
+                <TechnicalCard 
+                  isVisible={isVisible} 
+                  progressColor={theme.colors.primary} 
+                  skillLabel="Typescript" 
+                  percentage={80}
+                >
+                  <TypescriptIcon />
+                </TechnicalCard>
+                <TechnicalCard 
+                  isVisible={isVisible} 
+                  progressColor={theme.colors.primary} 
+                  skillLabel="Ruby on Rails" 
+                  percentage={70}
+                >
+                  <RubyOnRailsIcon />
+                </TechnicalCard>
+              </SkillsContainerGrid >
+            </TopSection>
+            <BottomSection>
+              <DesktopButtonContainer>
                 <ResumeTitle>Download Me!</ResumeTitle>
                 <Button width="100%">Resume</Button>
-              </MobileBottomContainer>
-            </BottomRightSection>
-          </BottomSection>
-        </Content>
-      </InnerSection>
-    </Section>
-  );
-}
+              </DesktopButtonContainer>
+              <BottomRightSection>
+                <SubSkills>
+                  <Header>Language</Header>
+                  <HrContainer><Hr width="100%" /></HrContainer>
+                  <Language style={{ marginTop: "24px"}}>English</Language>
+                  <Language>French</Language>
+                </SubSkills>
+                <SubSkills>
+                  <Header textAlign="right">Design</Header>
+                  <HrContainer><Hr width="100%" /></HrContainer>
+                  <DesignSkillsGrid>
+                    <DesignCard skill="Wireframe Prototypes">
+                      <WireframesIcon />
+                    </DesignCard>
+                    <DesignCard skill="InVision">
+                      <InVisionIcon />
+                    </DesignCard>
+                    <DesignCard skill="DesignPrincipls & Design Systems">
+                      <DesignPrincipleIcon />
+                    </DesignCard>
+                    <DesignCard skill="Figma">
+                      <FigmaIcon />
+                    </DesignCard>
+                    <DesignCard skill="Sketch Design">
+                      <SketchIcon />
+                    </DesignCard>
+                    <DesignCard skill="Responsive Design">
+                      <ResponsiveIcon />
+                    </DesignCard>
+                  </DesignSkillsGrid>
+                </SubSkills>
+                <MobileBottomContainer>
+                  <ResumeTitle>Download Me!</ResumeTitle>
+                  <Button width="100%">Resume</Button>
+                </MobileBottomContainer>
+              </BottomRightSection>
+            </BottomSection>
+          </Content>
+        </InnerSection>
+      </Section>
+    );
+  }
+)
 
 export default SkillsSection;

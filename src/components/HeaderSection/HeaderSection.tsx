@@ -56,6 +56,7 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
         dataTestId={dataTestId}
         {...rest}
         height="100vh"
+        margin="0 0 50px 0"
       >
         <InnerSection
           height={{
@@ -73,7 +74,11 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           <CertificationContainer>
             <ProgressBar
               progress={100}
-              width="500px"
+              width={{
+                desktop: "50%",
+                tablet: "70%",
+                mobile: "80%"
+              }}
               from="-500px" 
               to="0"
               color={theme.colors.white}

@@ -31,6 +31,9 @@ export const CertificationContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex-wrap: nowrap;
+  }
 `;
 
 export const Certification = styled.p`
@@ -48,8 +51,8 @@ export const Certification = styled.p`
   }
 
   @media (max-width: 1024px) {
+    width: 38%;
     margin: none;
-    width: 100%;
     text-align: right;
   }
 `;

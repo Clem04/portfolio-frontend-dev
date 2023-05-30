@@ -24,7 +24,6 @@ interface ContactProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactProps) {
-  console.log(isVisible)
   return (
     <Section 
       ref={sectionRef}
@@ -48,7 +47,10 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
             </IconContainer>
             <ProgressBar
               progress={100}
-              width="356px"
+              width={{
+                desktop: "30%",
+                mobile: "100%"
+              }}
               from="-356px" 
               to="0"
               color={theme.colors.primary}

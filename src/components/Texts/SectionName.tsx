@@ -41,7 +41,7 @@ export const Name = styled.p<SectionNameProps>`
     left: ${(props) => props.left?.mobile};
     right: ${(props) => props.right?.mobile};
   }
-  @media ( min-width: 415px and max-width: 768px) {
+  @media (min-width: 415px) and (max-width: 768px) {
     font-size: 2.3em;
     top: ${(props) => props.top?.tablet};
     left: ${(props) => props.left?.tablet};

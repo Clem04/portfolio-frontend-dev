@@ -16,9 +16,12 @@ export const Content = styled.div`
 `
 
 export const TopSection = styled.div`
-  width: fit-content;
+  min-width: 72%;
   @media (max-width: 414px) {
     width: 100%;
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: 32px;
   }
 `
 
@@ -62,12 +65,14 @@ export const SkillsContainerGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin: 0 0 32px 0;
+
   @media (max-width: 414px) {
     margin: 32px 0;
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 32px;
   }
-  @media (min-width: 768px) {
+
+  @media (min-width: 415px) and (max-width: 768px) {
     margin: 32px 0;
     grid-template-columns: repeat(4, 1fr);
     grid-row-gap: 32px;
