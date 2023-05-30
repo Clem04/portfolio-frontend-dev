@@ -106,9 +106,8 @@ function App() {
         <SkillsSection
           theme={theme}
           dataTestId="skills-section"
-          sectionRef={skillsSectionRef}
-          isVisible={isVisible.skills}
           ref={skillsSectionRef}
+          isVisible={isVisible.skills}
         />
         <IndustriesSection 
           theme={theme} 

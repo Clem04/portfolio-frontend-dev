@@ -10,6 +10,7 @@
     "@types/node": "^16.18.31",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "file-saver": "^2.0.5",
     "intersection-observer": "^0.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -44,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "@types/react-helmet": "^6.1.6",
     "@types/styled-components": "^5.1.26",
     "file-loader": "^6.2.0",

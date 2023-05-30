@@ -1,4 +1,4 @@
-import { forwardRef, HTMLAttributes, RefObject } from "react"
+import { forwardRef, HTMLAttributes } from "react"
 import Section from '../Sections/Section/Section'
 import { InnerSection } from '../Sections/InnerSection/InnerSection'
 import { SectionName } from "../Texts/SectionName"
@@ -49,17 +49,25 @@ interface Theme {
 export interface SkillsProps extends HTMLAttributes<HTMLDivElement> {
   theme: Theme;
   dataTestId: string;
-  sectionRef?: RefObject<HTMLDivElement>;
   isVisible: boolean;
 }
 
-const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(
-  ({ theme, dataTestId, isVisible, sectionRef }, ref) => {
+const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({ 
+  theme, dataTestId, isVisible, ...rest },ref) => {
+
+    const openPDF = () => {
+      const fileUrl = '/assets/resume.pdf';
+      window.open(fileUrl, '_blank');
+    };
+    
+    
+    
     return (
       <Section 
-        ref={sectionRef || ref} 
+        ref={ref} 
         dataTestId={dataTestId} 
         margin="50px 0"
+        {...rest}
       >
         <InnerSection
           padding={{
@@ -162,7 +170,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(
             <BottomSection isVisible={isVisible}>
               <DesktopButtonContainer>
                 <ResumeTitle>Download Me!</ResumeTitle>
-                <Button width="100%">Resume</Button>
+                <Button width="100%" onClick={openPDF}>Resume</Button>
               </DesktopButtonContainer>
               <BottomRightSection>
                 <SubSkills>
@@ -197,7 +205,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(
                 </SubSkills>
                 <MobileBottomContainer>
                   <ResumeTitle>Download Me!</ResumeTitle>
-                  <Button width="100%">Resume</Button>
+                  <Button width="100%" onClick={openPDF}>Resume</Button>
                 </MobileBottomContainer>
               </BottomRightSection>
             </BottomSection>

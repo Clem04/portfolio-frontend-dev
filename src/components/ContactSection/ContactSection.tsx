@@ -68,7 +68,9 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
           </TopSection>
           <SectionHeader isVisible={isVisible}>Get in Touch!</SectionHeader>
           <ButtonContainer isVisible={isVisible}>
-            <Button width="100%">CONTACT</Button>
+            <a href="mailto:iphona.paiement@gmail.com">
+              <Button width="100%">CONTACT</Button>
+            </a>
           </ButtonContainer>
           <Text isVisible={isVisible}>
             Thank you for visiting my website! I'm thrilled to connect with you regarding the frontend software engineer role. I created this website to showcase my frontend development skills, and I believe it's a great platform to demonstrate my abilities.<br />
