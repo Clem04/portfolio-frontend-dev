@@ -1,8 +1,8 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[[plugins.inputs]]
-  target = "next/image"
+  [plugins.inputs]
+    target = "next/image"
 
 [[plugins]]
   package = "@netlify/plugin-inline-cache"
@@ -15,4 +15,3 @@
   for = "/\\.svg$/"
   [headers.values]
     Content-Type = "image/svg+xml"
-
