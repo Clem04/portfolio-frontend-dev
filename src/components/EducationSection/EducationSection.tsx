@@ -38,7 +38,8 @@ function EducationSection({ theme, dataTestId, sectionRef, isVisible }: Educatio
         shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
         <Content>
-          <SectionName 
+          <SectionName
+            isVisible={isVisible} 
             textAlign="left"
             top={{
               desktop: "-38px",

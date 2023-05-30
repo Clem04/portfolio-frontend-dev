@@ -71,6 +71,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(
         >
           <Content>
             <SectionName 
+              isVisible={isVisible}
               textAlign="left" 
               top={{
                 desktop: "-88px",

@@ -38,7 +38,9 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
         backgroundColor="#6DC19E"
       >
         <Content>
-          <SectionName textAlign="right"
+          <SectionName 
+            isVisible={isVisible}
+            textAlign="right"
             top={{
               tablet: "-55px",
               desktop: "-74px",
