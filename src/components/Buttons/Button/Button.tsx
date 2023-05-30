@@ -1,7 +1,7 @@
-import { HTMLAttributes, ReactNode  } from "react";
+import { HTMLAttributes, ReactNode } from 'react';
 import styled from 'styled-components';
 
-interface ButtonProps extends HTMLAttributes<HTMLDivElement> {
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   width: string;
 }
@@ -22,10 +22,12 @@ const StyledButton = styled.button<ButtonProps>`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
-export default function Button({  children, width }: ButtonProps) {
+export default function Button({ children, width, onClick }: ButtonProps) {
   return (
-    <StyledButton width={width}>{children}</StyledButton>
-  )
+    <StyledButton type="button" width={width} onClick={onClick}>
+      {children}
+    </StyledButton>
+  );
 }

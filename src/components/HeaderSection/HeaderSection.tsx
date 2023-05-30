@@ -1,4 +1,4 @@
-import { HTMLAttributes, forwardRef, RefObject } from 'react';
+import { HTMLAttributes, forwardRef } from 'react';
 import Section from '../Sections/Section/Section';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import { InnerSection } from '../Sections/InnerSection/InnerSection';
@@ -26,22 +26,13 @@ interface Theme {
 interface HeaderSectionProps extends HTMLAttributes<HTMLDivElement> {
   theme: Theme;
   dataTestId: string;
-  sectionRef?: RefObject<HTMLDivElement>;
   onClick: () => void;
   animate?: boolean;
   isVisible: boolean;
 }
 
 export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
-  ({ 
-    theme, 
-    dataTestId, 
-    isVisible, 
-    onClick, 
-    animate, 
-    sectionRef, 
-    ...rest 
-  }: HeaderSectionProps) => {
+  ({ theme, dataTestId, isVisible, onClick, animate,  ...rest }, ref) => {
 
     const handleArrowDown = () => {
       onClick();
@@ -49,11 +40,12 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
 
     return (
       <Section
-        ref={sectionRef}
+        ref={ref}
         dataTestId={dataTestId}
         {...rest}
         height="100vh"
         margin="0 0 50px 0"
+        {...rest}
       >
         <InnerSection
           height={{
