@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fadeInAnimation } from '../Shared/Animation'
 
 export const Content = styled.div`
   width: 100%;
@@ -15,13 +16,15 @@ export const TopSection = styled.div`
   flex-wrap: wrap;
 `
 
-export const IconContainer = styled(TopSection)``
+export const IconContainer = styled(TopSection)<{ isVisible: boolean }>`
+  ${props => fadeInAnimation(props.isVisible)}
+`
 
 export const LinkedInDiv = styled.div`
   margin-left: 8px;
 `
 
-export const SectionHeader = styled.p`
+export const SectionHeader = styled.p<{ isVisible: boolean }>`
   width: 100%;
   margin: 16px 0;
   height: fit-content;
@@ -31,9 +34,10 @@ export const SectionHeader = styled.p`
   font-size: 2em;
   text-align: center;
   color: #063320;
+  ${props => fadeInAnimation(props.isVisible)}
 `
 
-export const Text = styled.p`
+export const Text = styled.p<{ isVisible: boolean }>`
   margin-top: 40px;
   padding: 0 72px;
   font-family: 'Kai';
@@ -43,15 +47,17 @@ export const Text = styled.p`
   line-height: 24px;
   text-align: center;
   color: #000000;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     text-align: left;
     padding: 0px;
   }
 `
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.div<{ isVisible: boolean }>`
   width: 20%;
   margin: 24px 0;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     width: 100%;
   }

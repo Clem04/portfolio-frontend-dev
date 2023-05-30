@@ -2,7 +2,6 @@ import { HTMLAttributes, forwardRef, RefObject } from 'react';
 import Section from '../Sections/Section/Section';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import { InnerSection } from '../Sections/InnerSection/InnerSection';
-import { useFadeInCertification } from '../Shared/hooks/useFadeInCertification'
 import {
   Name,
   Profession,
@@ -43,8 +42,6 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
     sectionRef, 
     ...rest 
   }: HeaderSectionProps) => {
-    
-    const { fadeInCertification, handleAnimationFinish } = useFadeInCertification(animate);
 
     const handleArrowDown = () => {
       onClick();
@@ -69,8 +66,8 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           }}
           border={`1px solid ${theme.colors.white}`}
         >
-          <Name>Clem Paiement.</Name>
-          <Profession>Software Frontend Engineer</Profession>
+          <Name isVisible={isVisible}>Clem Paiement.</Name>
+          <Profession isVisible={isVisible}>Software Frontend Engineer</Profession>
           <CertificationContainer>
             <ProgressBar
               progress={100}
@@ -82,16 +79,15 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
               from="-500px" 
               to="0"
               color={theme.colors.white}
-              onAnimationFinish={handleAnimationFinish}
               isVisible={isVisible}
             />
-            <Certification className={fadeInCertification ? 'fade-in' : ''}>
+            <Certification isVisible={isVisible}>
               Certified Ui/UX Designer
             </Certification>
           </CertificationContainer>
           <LocationDiv>
-            <Location>Canada</Location>
-            <IconLocation />
+            <Location isVisible={isVisible}>Canada</Location>
+            <IconLocation isVisible={isVisible} />
           </LocationDiv>
           <ArrowDownIcon onClick={handleArrowDown} />
         </InnerSection>

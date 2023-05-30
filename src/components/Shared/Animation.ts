@@ -1,12 +1,18 @@
-import { keyframes } from 'styled-components';
+import { keyframes, css } from 'styled-components';
 
-export const fadeInAnimation = (from: string, to: string) => keyframes`
+export const fadeIn = (from: string, to: string) => keyframes`
   from {
     opacity: ${from};
   }
   to {
     opacity: ${to};
   }
+`;
+
+export const fadeInAnimation = (isVisible: boolean) => css`
+  opacity: ${isVisible ? '1' : '0'};
+  animation: ${fadeIn('0', '1')} 1s ease-in-out;
+  transition: opacity 1s;
 `;
 
 export const slidingAnimation = (from: string, to: string) => keyframes`

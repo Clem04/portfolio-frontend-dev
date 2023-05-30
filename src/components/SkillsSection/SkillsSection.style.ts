@@ -1,9 +1,5 @@
-import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
-
-interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
-  textAlign?: string;
-}
+import { fadeInAnimation } from '../Shared/Animation'
 
 // Divs
 export const Content = styled.div`
@@ -25,15 +21,16 @@ export const TopSection = styled.div`
   }
 `
 
-export const BottomSection = styled.div`
+export const BottomSection = styled.div<{ isVisible: boolean }>`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     flex-wrap: wrap;
   }
-`
+`;
 
 export const BottomRightSection = styled.div`
   with: 70%;
@@ -114,7 +111,7 @@ export const SectionName = styled.p`
   left: -105px;
 `
 
-export const Header = styled.p<ParagraphProps>`
+export const Header = styled.p<{textAlign?: string}>`
   font-family: 'Jura', sans-serif;
   font-weight: 300;
   font-size: 1.2em;

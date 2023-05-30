@@ -8,7 +8,7 @@ interface SectionProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-const SectionContainer = styled.div<SectionProps>`
+const SectionContainer = styled.div<SectionProps >`
   width: 100%;
   height: ${(props) => props.height || "auto"};
   margin: ${(props) => props.margin};

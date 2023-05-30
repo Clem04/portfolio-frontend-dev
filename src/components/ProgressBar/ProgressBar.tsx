@@ -14,7 +14,6 @@ export interface ProgressBarProps extends HTMLAttributes<HTMLDivElement> {
   from: string;
   to: string;
   transform?: string;
-  onAnimationFinish?: () => void;
   isVisible: boolean;
 }
 
@@ -26,7 +25,6 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
       width, 
       from, 
       to, 
-      onAnimationFinish, 
       transform, 
       isVisible 
     }: ProgressBarProps,
@@ -37,15 +35,12 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
       if (isVisible && progress === 100) {
         const timer = setTimeout(() => {
           setAnimateBouncing(true);
-          if (onAnimationFinish) {
-            onAnimationFinish();
-          }
         }, 1000);
         return () => clearTimeout(timer);
       } else {
         setAnimateBouncing(false);
       }
-    }, [isVisible, progress, onAnimationFinish]);
+    }, [isVisible, progress]);
 
     return (
       <ProgressBarContainer 

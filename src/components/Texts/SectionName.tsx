@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled, { CSSProperties } from 'styled-components';
 
 interface SectionNameProps {
-  children: ReactNode;
+  children: React.ReactNode;
   textAlign: string;
   top?: {
     desktop?: CSSProperties['top'];
@@ -19,9 +19,10 @@ interface SectionNameProps {
     tablet?: CSSProperties['right'];
     mobile?: CSSProperties['right'];
   };
+  isVisible: boolean; // Add isVisible prop
 }
 
-export const Name = styled.p<SectionNameProps>`
+const Name = styled.p<SectionNameProps>`
   width: 100%;
   text-align: ${(props) => props.textAlign};
   color: ${(props) => props.theme.colors.primary};
@@ -31,9 +32,13 @@ export const Name = styled.p<SectionNameProps>`
   font-size: 4.2em;
   text-shadow: -9px 6px 14px rgba(0, 0, 0, 0.25);
   position: absolute;
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
   top: ${(props) => props.top?.desktop};
   left: ${(props) => props.left?.desktop};
   right: ${(props) => props.right?.desktop};
+  transform: translateX(${(props) =>
+    props.isVisible ? '0' : props.left ? '-100%' : props.right ? '100%' : '0'});
 
   @media (max-width: 414px) {
     font-size: 2.3em;
@@ -41,18 +46,37 @@ export const Name = styled.p<SectionNameProps>`
     left: ${(props) => props.left?.mobile};
     right: ${(props) => props.right?.mobile};
   }
+
   @media (min-width: 415px) and (max-width: 768px) {
     font-size: 2.3em;
     top: ${(props) => props.top?.tablet};
     left: ${(props) => props.left?.tablet};
     right: ${(props) => props.right?.tablet};
   }
-`
 
+  &.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
-export const SectionName: React.FC<SectionNameProps> = ({ textAlign, top, left, right, children }) => {
+export const SectionName: React.FC<SectionNameProps> = ({
+  textAlign,
+  top,
+  left,
+  right,
+  children,
+  isVisible, // Add isVisible prop
+}) => {
   return (
-    <Name textAlign={textAlign} top={top} left={left} right={right}>
+    <Name
+      textAlign={textAlign}
+      top={top}
+      left={left}
+      right={right}
+      isVisible={isVisible} // Pass isVisible prop
+      className={isVisible ? 'fade-in' : ''}
+    >
       {children}
     </Name>
   );
