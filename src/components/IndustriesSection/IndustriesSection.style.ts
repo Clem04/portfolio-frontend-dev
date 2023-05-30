@@ -1,10 +1,5 @@
-import { HTMLAttributes } from "react";
 import styled from 'styled-components';
-
-interface SectionIndustriesProps extends HTMLAttributes<HTMLDivElement> {
-  borderRight?: string;
-  borderBottom ?: string;
-}
+import { fadeInAnimation } from '../Shared/Animation'
 
 export const Content = styled.div`
   width: 100%;
@@ -13,7 +8,7 @@ export const Content = styled.div`
   position: relative;
   align-content: space-between;
 `
-export const SectionDescription = styled.p`
+export const SectionDescription = styled.p<{ isVisible: boolean }>`
   width: 60%;
   font-family: 'Kai';
   font-style: normal;
@@ -21,6 +16,7 @@ export const SectionDescription = styled.p`
   font-size: 1.5em;
   line-height: 36px;
   color: #000000;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     width: 100%;
     font-size: 1em;
@@ -28,18 +24,19 @@ export const SectionDescription = styled.p`
   }
 `
 
-export const GridIndustries = styled.div`
+export const GridIndustries = styled.div<{ isVisible: boolean }>`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   height: fit-content;
   margin-top: 32px;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     grid-template-columns: 1fr;
   }
 `
 
-export const Industry = styled.div<SectionIndustriesProps>`
+export const Industry = styled.div<{borderRight?: string, borderBottom?: string}>`
   padding: 32px;
   border-right: ${(props) => props.borderRight || 'auto'};
   font-family: 'Karantina';

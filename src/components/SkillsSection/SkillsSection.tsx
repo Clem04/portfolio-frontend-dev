@@ -46,7 +46,7 @@ interface Theme {
   };
 }
 
-interface SkillsProps extends HTMLAttributes<HTMLDivElement> {
+export interface SkillsProps extends HTMLAttributes<HTMLDivElement> {
   theme: Theme;
   dataTestId: string;
   sectionRef?: RefObject<HTMLDivElement>;
@@ -158,7 +158,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(
                 </TechnicalCard>
               </SkillsContainerGrid >
             </TopSection>
-            <BottomSection>
+            <BottomSection isVisible={isVisible}>
               <DesktopButtonContainer>
                 <ResumeTitle>Download Me!</ResumeTitle>
                 <Button width="100%">Resume</Button>

@@ -53,7 +53,7 @@ function EducationSection({ theme, dataTestId, sectionRef, isVisible }: Educatio
           >
             Education
           </SectionName>
-          <DegreesGrid>
+          <DegreesGrid isVisible={isVisible}>
             <DegreeCard>
               <TCUImage />
               <DegreeType marginTop="24px">Bachelor of Science</DegreeType>

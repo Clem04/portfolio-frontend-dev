@@ -3,24 +3,24 @@ import { ReactComponent as ArrowDown } from '../assets/svg/icons/arrow_down.svg'
 import { ReactComponent as LocationIcon } from '../assets/svg/icons/location.svg';
 import { fadeInAnimation, BouncingAnimation } from '../Shared/Animation';
 
-export const Name = styled.p`
+export const Name = styled.p<{ isVisible: boolean }>`
   width: 100%;
   color: ${(props) => props.theme.colors.white};
   font-family: ${(props) => props.theme.fonts.topSection};
   font-size: 8rem;
   font-style: normal;
   font-weight: 400;
-  animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     font-size: 4em;
   }
 `;
 
-export const Profession = styled.p`
+export const Profession = styled.p<{ isVisible: boolean }>`
   width: 100%;
   color: ${(props) => props.theme.colors.white};
   font-size: 2rem;
-  animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     font-size: 1.6rem;
   }
@@ -36,19 +36,14 @@ export const CertificationContainer = styled.div`
   }
 `;
 
-export const Certification = styled.p`
+export const Certification = styled.p<{ isVisible: boolean }>`
   margin: 0 0 0 24px;
   font-family: 'Inria Serif';
   font-style: normal;
   font-weight: 100;
   font-size: 1rem;
   color: ${(props) => props.theme.colors.white};
-  opacity: 0;
-  transition: opacity 0.5s;
-
-  &.fade-in {
-    animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
-  }
+  ${props => fadeInAnimation(props.isVisible)}
 
   @media (max-width: 1024px) {
     width: 38%;
@@ -63,7 +58,7 @@ export const LocationDiv = styled.div`
   align-items: center;
 `;
 
-export const Location = styled.p`
+export const Location = styled.p<{ isVisible: boolean }>`
   width: 100%;
   font-family: 'Jaldi';
   text-align: right;
@@ -72,17 +67,17 @@ export const Location = styled.p`
   font-size: 36px;
   line-height: 61px;
   color: ${(props) => props.theme.colors.white};
-  animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     font-size: 1rem;
   }
 `;
 
-export const IconLocation = styled(LocationIcon)`
+export const IconLocation = styled(LocationIcon)<{ isVisible: boolean }>`
   width: 32px;
   height: 32px;
   margin-left: 16px;
-  animation: ${fadeInAnimation('0', '1')} 3s ease-out forwards;
+  ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     width: 16px;
     height: 16px;

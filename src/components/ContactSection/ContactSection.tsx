@@ -1,7 +1,15 @@
 import { HTMLAttributes, RefObject } from "react";
 import Section from '../Sections/Section/Section';
 import { InnerSection } from '../Sections/InnerSection/InnerSection';
-import { Content, SectionHeader, IconContainer, TopSection, LinkedInDiv, Text, ButtonContainer } from './ContactSection.style'
+import { 
+  Content, 
+  SectionHeader, 
+  IconContainer, 
+  TopSection, 
+  LinkedInDiv, 
+  Text, 
+  ButtonContainer 
+} from './ContactSection.style'
 import ProgressBar from '../ProgressBar/ProgressBar'
 import Button from '../Buttons/Button/Button'
 
@@ -39,7 +47,7 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
       >
         <Content>
           <TopSection>
-            <IconContainer>
+            <IconContainer isVisible={isVisible}>
               <GithubIcon />
               <LinkedInDiv>
                 <LinkedInIcon />
@@ -58,11 +66,11 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
               isVisible={isVisible}
             />
           </TopSection>
-          <SectionHeader>Get in Touch!</SectionHeader>
-          <ButtonContainer>
+          <SectionHeader isVisible={isVisible}>Get in Touch!</SectionHeader>
+          <ButtonContainer isVisible={isVisible}>
             <Button width="100%">CONTACT</Button>
           </ButtonContainer>
-          <Text>
+          <Text isVisible={isVisible}>
             Thank you for visiting my website! I'm thrilled to connect with you regarding the frontend software engineer role. I created this website to showcase my frontend development skills, and I believe it's a great platform to demonstrate my abilities.<br />
             <br />
             This website highlights my expertise in frontend development, particularly in creating visually appealing user interfaces. One of the highlights is an SVG file that I designed and implemented to enhance the overall user experience. It showcases my attention to detail and creativity in utilizing different web technologies.<br />

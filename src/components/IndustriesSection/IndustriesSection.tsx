@@ -52,7 +52,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
           >
             Industries
           </SectionName>
-          <SectionDescription>
+          <SectionDescription isVisible={isVisible}>
             On my resume, 
             you will find my experience 
             across various industries and I am 
@@ -60,7 +60,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
             sectors as well. Here are some of the industries 
             <br /> I have worked in: 
           </SectionDescription>
-          <GridIndustries>
+          <GridIndustries isVisible={isVisible}>
             <Industry borderRight="1px solid black" borderBottom="1px solid black">e-commerce</Industry>
             <Industry borderRight="1px solid black" borderBottom="1px solid black">finance</Industry>
             <Industry>health</Industry>
