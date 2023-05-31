@@ -38,7 +38,7 @@ const Name = styled.p<SectionNameProps>`
   left: ${(props) => props.left?.desktop};
   right: ${(props) => props.right?.desktop};
   transform: translateX(${(props) =>
-    props.isVisible ? '0' : props.left ? '-10%' : props.right ? '10%' : '0'});
+    props.isVisible ? '0' : props.left ? '-5%' : props.right ? '5%' : '0'});
 
   @media (max-width: 414px) {
     font-size: 2.3em;
