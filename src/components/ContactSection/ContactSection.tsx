@@ -57,10 +57,22 @@ function ContactSection({ theme, dataTestId, sectionRef, isvisible }: ContactPro
         <Content>
           <TopSection>
             <IconContainer isVisible={isvisible}>
-              <GithubIcon />
-              <LinkedInDiv>
-                <LinkedInIcon />
-              </LinkedInDiv>
+              <a 
+                href="https://github.com/Clem04/portfolio-frontend-dev"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <GithubIcon />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/clemence-paiement/"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <LinkedInDiv>
+                  <LinkedInIcon />
+                </LinkedInDiv>
+              </a>
             </IconContainer>
             <ProgressBar
               progress={100}
