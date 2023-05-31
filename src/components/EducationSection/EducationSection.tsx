@@ -6,7 +6,7 @@ import { Content, DegreesGrid, DegreeCard, DegreeType, Degree  } from './Educati
 
 // Images
 import { ReactComponent as TCUImage } from "../assets/svg/education/tcu.svg"
-import { ReactComponent as MCCImage } from "../assets/svg/education/mcc.svg"
+import { ReactComponent as MCCImage } from "../assets/svg/education/MCC.svg"
 import { ReactComponent as LeWagonImage } from "../assets/svg/education/wagon.svg"
 
 interface Theme {
