@@ -1,7 +1,7 @@
 import { HTMLAttributes, RefObject } from "react";
 import Section from '../Sections/Section/Section';
 import { InnerSection } from '../Sections/InnerSection/InnerSection';
-import { SectionName } from "../Texts/SectionName"
+import { SectionName } from "../Texts/SectionName/SectionName"
 import { Content, DegreesGrid, DegreeCard, DegreeType, Degree  } from './EducationSection.style'
 
 // Images
@@ -12,6 +12,7 @@ import { ReactComponent as LeWagonImage } from "../assets/svg/education/wagon.sv
 interface Theme {
   colors: {
     white: string;
+    primary: string;
   };
 }
 
@@ -51,6 +52,7 @@ function EducationSection({ theme, dataTestId, sectionRef, isVisible }: Educatio
               tablet: "-21px",
               mobile: "-21px"
             }}
+            color={theme.colors.primary}
           >
             Education
           </SectionName>

@@ -1,11 +1,11 @@
 import { forwardRef, HTMLAttributes } from "react"
 import Section from '../Sections/Section/Section'
 import { InnerSection } from '../Sections/InnerSection/InnerSection'
-import { SectionName } from "../Texts/SectionName"
+import { SectionName } from "../Texts/SectionName/SectionName"
 import ProgressBar from '../ProgressBar/ProgressBar'
 import TechnicalCard from "../Cards/TechnicalCard/TechnicalCard"
 import DesignCard from '../Cards/DesignCard/DesignCard'
-import SkillsSectionName from '../Texts/SkillsSectionName'
+import SkillsSectionName from '../Texts/SkillsSectionName/SkillsSectionName'
 import Button from "../Buttons/Button/Button"
 import Hr from '../Hr/Hr'
 import { 
@@ -108,6 +108,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
               tablet: "-69px",
               mobile: "-36px"
             }}
+            color={theme.colors.primary}
           >
             Skills
           </SectionName>
@@ -123,7 +124,11 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
             isVisible={isVisible}
           />
           <TopSection>
-            <SkillsSectionName textAlign="left" name="Technical" />
+            <SkillsSectionName 
+              color={theme.colors.primary} 
+              textAlign="left" 
+              name="Technical" 
+            />
             <Hr width="100%" />
             <SkillsContainerGrid>
               {technicalSkills.map(({ label, Icon, percentage }) => (

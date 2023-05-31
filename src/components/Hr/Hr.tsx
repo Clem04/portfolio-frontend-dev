@@ -12,6 +12,6 @@ interface HrProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function Hr({ width }: HrProps) {
   return (
-    <Line width={width} />
+    <Line width={width} data-testid="hr-line" />
   )
 }

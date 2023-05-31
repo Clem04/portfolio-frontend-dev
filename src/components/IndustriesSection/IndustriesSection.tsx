@@ -1,7 +1,7 @@
 import { HTMLAttributes, RefObject } from "react"
 import Section from '../Sections/Section/Section'
 import { InnerSection } from '../Sections/InnerSection/InnerSection'
-import { SectionName } from "../Texts/SectionName"
+import { SectionName } from "../Texts/SectionName/SectionName"
 import { 
   Content,
   SectionDescription,
@@ -12,6 +12,7 @@ import {
 interface Theme {
   colors: {
     white: string;
+    primary: string;
   };
 }
 
@@ -51,6 +52,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
               tablet: "-61px",
               mobile: "-32px"
             }}
+            color={theme.colors.primary}
           >
             Industries
           </SectionName>

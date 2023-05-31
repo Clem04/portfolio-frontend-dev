@@ -58,8 +58,19 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           }}
           border={`1px solid ${theme.colors.white}`}
         >
-          <Name isVisible={isVisible}>Clem Paiement.</Name>
-          <Profession isVisible={isVisible}>Software Frontend Engineer</Profession>
+          <Name 
+            isVisible={isVisible} 
+            color={theme.colors.white}
+            topSection={theme.fonts.topSection}
+          >
+            Clemence Paiement.
+          </Name>
+          <Profession 
+            isVisible={isVisible}
+            color={theme.colors.white}
+          >
+            Software Frontend Engineer
+          </Profession>
           <CertificationContainer>
             <ProgressBar
               progress={100}
@@ -73,15 +84,26 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
               color={theme.colors.white}
               isVisible={isVisible}
             />
-            <Certification isVisible={isVisible}>
+            <Certification 
+              isVisible={isVisible}
+              color={theme.colors.white}
+            >
               Certified Ui/UX Designer
             </Certification>
           </CertificationContainer>
           <LocationDiv>
-            <Location isVisible={isVisible}>Canada</Location>
+            <Location 
+              isVisible={isVisible}
+              color={theme.colors.white}
+            >
+              Canada
+            </Location>
             <IconLocation isVisible={isVisible} />
           </LocationDiv>
-          <ArrowDownIcon onClick={handleArrowDown} />
+          <ArrowDownIcon 
+            onClick={handleArrowDown} 
+            data-testid="arrow-down-icon" 
+          />
         </InnerSection>
       </Section>
     );

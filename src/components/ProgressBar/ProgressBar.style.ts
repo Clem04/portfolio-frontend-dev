@@ -22,6 +22,7 @@ export const Progress = styled.div<{
     progress: number, 
     from: string, 
     to: string, 
+    color: string;
     isVisible: boolean 
 }>`
   display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};

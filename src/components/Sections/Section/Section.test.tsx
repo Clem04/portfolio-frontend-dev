@@ -2,12 +2,16 @@ import { render, screen } from '@testing-library/react';
 import Section from './Section';
 
 describe('Section component', () => {
-  test('renders with correct background color and data-testid', () => {
+  it('renders with correct background color and data-testid', () => {
     const backgroundColor = 'red';
-    const dataTestId = 'section-component';
+    const dataTestId = 'section-container';
+
     render(
-      <Section dataTestId={dataTestId}>
-        Section Content
+      <Section
+        backgroundColor={backgroundColor}
+        dataTestId={dataTestId}
+      >
+        Any component
       </Section>
     );
 

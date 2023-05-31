@@ -44,11 +44,13 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
 
     return (
       <ProgressBarContainer 
+        data-testid="progress-bar"
         ref={ref} 
         width={width} 
         transform={transform} 
       >
         <Progress 
+          data-testid="progress"
           progress={progress} 
           color={color} 
           from={from} 
@@ -56,8 +58,9 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
           isVisible={isVisible} 
         />
         {
-          progress === 100 && 
+          progress === 100 && isVisible && 
             <BouncingCircle 
+              data-testid="bouncing-circle"
               animate={animate !== undefined ? animate : animateBouncing} 
               color={color} 
             />
