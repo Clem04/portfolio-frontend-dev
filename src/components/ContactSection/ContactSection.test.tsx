@@ -4,9 +4,18 @@ import ContactSection from './ContactSection';
 describe('ContactSection', () => {
   const theme = {
     colors: {
-      white: '#ffffff',
       primary: '#000000',
+      white: '#ffffff',
+      black: "#000000"
     },
+    fonts: {
+      body: 'Kai',
+      sectionHeader: 'Roboto'
+    },
+    fontWeights: {
+      light: "100",
+      semiBold: "600"
+    }
   };
 
   test('renders the contact section with correct content and styles', () => {

@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 
-interface ButtonProps {
-  width: string;
-}
-
-export const StyledButton = styled.button<ButtonProps>`
+export const StyledButton = styled.button<{ 
+  width: string, 
+  backgroundColor: string,
+  color: string,
+  fontFamily: string,
+  fontWeight: string
+}>`
   width: ${(props) => props.width};
   padding: 16px 24px;
-  background: #063320;
-  border: 2px solid #063320;
+  background: ${(props) => props.backgroundColor};
+  border: 2px solid ${(props) => props.backgroundColor}};
   border-radius: 50px;
-  color: white;
-  font-family: 'Kai';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.8em;
+  color: ${(props) => props.color};
+  font-family: ${(props) => props.fontFamily};
+  font-weight: ${(props) => props.fontWeight};
+  font-size: 1rem;
   text-align: center;
-  color: #FFFFFF;
   &:hover {
     cursor: pointer;
   }

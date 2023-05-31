@@ -5,6 +5,7 @@ interface SectionNameProps {
   children: React.ReactNode;
   textAlign: string;
   color: string;
+  fontFamily: string;
   top?: {
     desktop?: CSSProperties['top'];
     tablet?: CSSProperties['top'];
@@ -27,7 +28,7 @@ const Name = styled.p<SectionNameProps>`
   width: 100%;
   text-align: ${(props) => props.textAlign};
   color: ${(props) => props.color};
-  font-family: 'League Gothic';
+  font-family: ${(props) => props.fontFamily};
   font-style: normal;
   font-weight: 400;
   font-size: 4.2em;
@@ -39,7 +40,7 @@ const Name = styled.p<SectionNameProps>`
   left: ${(props) => props.left?.desktop};
   right: ${(props) => props.right?.desktop};
   transform: translateX(${(props) =>
-    props.isvisible ? '0' : props.left ? '-50%' : props.right ? '50%' : '0'});
+    props.isvisible ? '0' : props.left ? '-5%' : props.right ? '5%' : '0'});
 
   @media (max-width: 414px) {
     font-size: 2.3em;
@@ -55,11 +56,6 @@ const Name = styled.p<SectionNameProps>`
     right: ${(props) => props.right?.tablet};
   }
 
-  @media (max-width: 1024px) {
-    transform: translateX(${(props) =>
-      props.isvisible ? '0' : props.left ? '-5%' : props.right ? '5%' : '0'});
-  }
-
   &.fade-in {
     opacity: 1;
     transform: translateX(0);
@@ -73,6 +69,7 @@ export const SectionName: React.FC<SectionNameProps> = ({
   right,
   children,
   isvisible,
+  fontFamily,
   color
 }) => {
   return (
@@ -83,6 +80,7 @@ export const SectionName: React.FC<SectionNameProps> = ({
       right={right}
       isvisible={isvisible}
       className={isvisible ? 'fade-in' : ''}
+      fontFamily={fontFamily}
       color={color}
     >
       {children}

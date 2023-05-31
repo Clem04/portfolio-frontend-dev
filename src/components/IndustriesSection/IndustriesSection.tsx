@@ -11,9 +11,20 @@ import {
 
 interface Theme {
   colors: {
-    white: string;
     primary: string;
-  };
+    secondary: string;
+    white: string;
+    black: string;
+  },
+  fonts: {
+    sectionHeader: string;
+    body: string;
+    industries: string;
+  },
+  fontWeights: {
+    semiRegular: string;
+    bold: string;
+  }
 }
 
 interface IndustriesProps extends HTMLAttributes<HTMLDivElement> {
@@ -36,7 +47,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
           desktop: "32px",
           mobile: "24px"
         }}
-        backgroundColor="#6DC19E"
+        backgroundColor={theme.colors.secondary}
       >
         <Content>
           <SectionName 
@@ -53,10 +64,16 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
               mobile: "-32px"
             }}
             color={theme.colors.primary}
+            fontFamily={theme.fonts.sectionHeader}
           >
             Industries
           </SectionName>
-          <SectionDescription isVisible={isvisible}>
+          <SectionDescription 
+            isVisible={isvisible}
+            color={theme.colors.black}
+            fontFamily={theme.fonts.body}
+            fontWeight={theme.fontWeights.semiRegular}
+          >
             On my resume, 
             you will find my experience 
             across various industries and I am 
@@ -65,9 +82,31 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
             <br /> I have worked in: 
           </SectionDescription>
           <GridIndustries isVisible={isvisible}>
-            <Industry borderRight="1px solid black" borderBottom="1px solid black">e-commerce</Industry>
-            <Industry borderRight="1px solid black" borderBottom="1px solid black">finance</Industry>
-            <Industry>health</Industry>
+            <Industry 
+              borderRight={theme.colors.black} 
+              borderBottom={theme.colors.black}
+              color={theme.colors.black}
+              fontFamily={theme.fonts.industries}
+              fontWeight={theme.fontWeights.bold}
+            >
+              e-commerce
+            </Industry>
+            <Industry 
+              borderRight={theme.colors.black} 
+              borderBottom={theme.colors.black}
+              color={theme.colors.black}
+              fontFamily={theme.fonts.industries}
+              fontWeight={theme.fontWeights.bold}
+            >
+              finance
+            </Industry>
+            <Industry 
+              color={theme.colors.black}
+              fontFamily={theme.fonts.industries}
+              fontWeight={theme.fontWeights.bold}
+            >
+              health
+            </Industry>
           </GridIndustries>
         </Content>
       </InnerSection>

@@ -43,16 +43,24 @@ export const BottomRightSection = styled.div`
   }
 `
 
-export const SubSkills = styled.div`
-  padding-right: 8px;
-  border-right: 1px solid black;
-  margin: 0 0 0 32px;
+export const SubSkills = styled.div<{ color: string}>`
   height: auto;
+  padding-right: 8px;
+  border-right: 1px solid ${(props) => props.color};
+  margin: 0 0 0 32px;
   @media (max-width: 414px) {
     width 100%;
     padding-right: 0;
     border-right: none;
     margin: 32px 0;
+  }
+`
+
+export const HrContainer = styled.div`
+  display: none;
+  @media (max-width: 414px) {
+    width 100%;
+    display: block;
   }
 `
 
@@ -76,14 +84,6 @@ export const SkillsContainerGrid = styled.div`
   }
 `
 
-export const HrContainer = styled.div`
-  display: none;
-  @media (max-width: 414px) {
-    width 100%;
-    display: block;
-  }
-`
-
 export const DesignSkillsGrid = styled.div`
   display: grid;
   margin-top: 24px;
@@ -97,43 +97,20 @@ export const DesignSkillsGrid = styled.div`
 
 
 // Texts
-export const SectionName = styled.p`
+export const ResumeTitle = styled.p<{ 
+  fontFamily: string, 
+  color: string
+}>`
   width: 100%;
-  text-align: left;
-  color: ${(props) => props.theme.colors.primary};
-  font-family: 'League Gothic';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 4em;
-  text-shadow: -9px 6px 14px rgba(0, 0, 0, 0.25);
-  position: absolute;
-  top: -96px;
-  left: -105px;
-`
-
-export const Header = styled.p<{textAlign?: string}>`
-  font-family: 'Jura', sans-serif;
-  font-weight: 300;
-  font-size: 1.2em;
-  color: #063320;
-  text-align: ${(props) => props.textAlign}
-`
-
-export const ResumeTitle = styled.p`
-  width: 100%;
-  font-family: 'Kai';
-  font-style: normal;
-  font-weight: 400;
+  font-family: ${props => props.fontFamily};
   font-size: 0.8em;
   text-align: center;
-  color: #063320;
+  color: ${props => props.color};
   margin-bottom: 16px;
 `
 
-export const Language = styled.p`
-  font-family: 'Kai';
-  font-style: normal;
-  font-weight: 400;
+export const Language = styled.p<{ fontFamily: string}>`
+  font-family: ${props => props.fontFamily};
   font-size: 0.7em;
   line-height: 1.5em;
 `

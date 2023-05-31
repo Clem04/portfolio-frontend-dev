@@ -11,7 +11,6 @@ import Hr from '../Hr/Hr'
 import { 
   Content, 
   TopSection, 
-  Header, 
   SkillsContainerGrid ,
   BottomSection,
   DesktopButtonContainer,
@@ -43,7 +42,16 @@ interface Theme {
   colors: {
     primary: string;
     white: string;
-  };
+    black: string
+  },
+  fonts: {
+    sectionHeader: string;
+    skillsHeader: string;
+    body: string;
+  },
+  fontWeights: {
+    light: string;
+  }
 }
 
 export interface SkillsProps extends HTMLAttributes<HTMLDivElement> {
@@ -109,6 +117,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
               mobile: "-36px"
             }}
             color={theme.colors.primary}
+            fontFamily={theme.fonts.sectionHeader}
           >
             Skills
           </SectionName>
@@ -125,9 +134,10 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
           />
           <TopSection>
             <SkillsSectionName 
-              color={theme.colors.primary} 
+              color={theme.colors.black} 
               textAlign="left" 
               name="Technical" 
+              fontFamily={theme.fonts.skillsHeader}
             />
             <Hr width="100%" />
             <SkillsContainerGrid>
@@ -138,6 +148,8 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
                   progressColor={theme.colors.primary}
                   skillLabel={label}
                   percentage={percentage}
+                  color={theme.colors.primary}
+                  fontFamily={theme.fonts.body}
                 >
                   <Icon />
                 </TechnicalCard>
@@ -146,30 +158,68 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
           </TopSection>
           <BottomSection isvisible={isvisible}>
             <DesktopButtonContainer>
-              <ResumeTitle>Download Me!</ResumeTitle>
-              <Button width="100%" onClick={openPDF}>Resume</Button>
+              <ResumeTitle 
+                fontFamily={theme.fonts.body}
+                color={theme.colors.primary}
+              >
+                Download Me!
+              </ResumeTitle>
+              <Button 
+                width="100%" 
+                onClick={openPDF}
+                backgroundColor={theme.colors.primary}
+                color={theme.colors.white}
+                fontFamily={theme.fonts.body}
+                fontWeight={theme.fontWeights.light}
+              >
+                Resume
+              </Button>
             </DesktopButtonContainer>
             <BottomRightSection>
-              <SubSkills>
-                <Header>Language</Header>
+              <SubSkills color={theme.colors.primary}>
+                <SkillsSectionName 
+                  color={theme.colors.black} 
+                  textAlign="left" 
+                  name="Language" 
+                  fontFamily={theme.fonts.skillsHeader}
+                />
                 <HrContainer><Hr width="100%" /></HrContainer>
-                <Language style={{ marginTop: "24px"}}>English</Language>
-                <Language>French</Language>
+                <Language fontFamily={theme.fonts.body} style={{ marginTop: "24px"}}>English</Language>
+                <Language fontFamily={theme.fonts.body}>French</Language>
               </SubSkills>
-              <SubSkills>
-                <Header textAlign="right">Design</Header>
+              <SubSkills color={theme.colors.primary}>
+                <SkillsSectionName 
+                  color={theme.colors.black} 
+                  textAlign="right" 
+                  name="Design" 
+                  fontFamily={theme.fonts.skillsHeader}
+                />
                 <HrContainer><Hr width="100%" /></HrContainer>
                 <DesignSkillsGrid>
                   {designSkills.map(({ skill, Icon }) => (
-                    <DesignCard key={skill} skill={skill}>
+                    <DesignCard key={skill} skill={skill} fontFamily={theme.fonts.body}>
                       <Icon />
                     </DesignCard>
                   ))}
                 </DesignSkillsGrid>
               </SubSkills>
               <MobileBottomContainer>
-                <ResumeTitle>Download Me!</ResumeTitle>
-                <Button width="100%" onClick={openPDF}>Resume</Button>
+                <ResumeTitle 
+                  fontFamily={theme.fonts.body}
+                  color={theme.colors.primary}
+                >
+                  Download Me!
+                </ResumeTitle>
+                <Button 
+                  width="100%" 
+                  backgroundColor={theme.colors.primary}
+                  color={theme.colors.white}
+                  fontFamily={theme.fonts.body}
+                  fontWeight={theme.fontWeights.light}
+                  onClick={openPDF}
+                >
+                  Resume
+                </Button>
               </MobileBottomContainer>
             </BottomRightSection>
           </BottomSection>

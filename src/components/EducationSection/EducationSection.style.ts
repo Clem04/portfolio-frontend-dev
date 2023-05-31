@@ -37,15 +37,20 @@ export const DegreeCard = styled.div`
   }
 `
 
-export const DegreeType = styled.p<{ marginTop?: string }>`
+export const DegreeType = styled.p<{ 
+  marginTop?: string, 
+  fontFamily: string, 
+  color: string,
+  fontWeight: string
+}>`
   width: 100%;
-  text-align: center;
-  font-family: 'Kai';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.2em;
-  color: #000000;
   margin-top: ${(props) => props.marginTop || ''};
+  font-family: ${(props) => props.fontFamily};
+  font-weight: ${(props) => props.fontWeight};
+  font-size: 1.2em;
+  line-height: 24px;
+  color: ${(props) => props.color};
+  text-align: center;
 `
 
 export const Degree = styled(DegreeType)`

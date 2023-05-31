@@ -4,13 +4,14 @@ import { DesignSkillCard, DesignSkillName } from './DesignCard.style'
 interface DesignCardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   skill: string;
+  fontFamily: string;
 }
 
-export default function DesignCard({ children, skill }: DesignCardProps) {
+export default function DesignCard({ children, skill, fontFamily }: DesignCardProps) {
   return (
     <DesignSkillCard>
       {children}
-      <DesignSkillName>{skill}</DesignSkillName>
+      <DesignSkillName fontFamily={fontFamily}>{skill}</DesignSkillName>
     </DesignSkillCard>
   )
 }

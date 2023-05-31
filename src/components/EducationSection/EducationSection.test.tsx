@@ -4,9 +4,17 @@ import EducationSection from './EducationSection';
 describe('EducationSection', () => {
   const theme = {
     colors: {
-      white: '#ffffff',
       primary: '#000000',
+      black: '#000000',
+      white: '#ffffff',
     },
+    fonts: {
+      sectionHeader: 'Arial',
+      body: 'Roboto'
+    },
+    fontWeights: {
+      semiRegular: "400"
+    }
   };
 
   test('renders the education section with correct content and styles', () => {

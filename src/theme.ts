@@ -3,7 +3,6 @@ import { DefaultTheme } from 'styled-components';
 export interface Theme extends DefaultTheme {
   fonts: {
     primary: string;
-    secondary: string;
     topSection: string;
     sectionHeader: string;
     skillsHeader: string;
@@ -16,19 +15,10 @@ export interface Theme extends DefaultTheme {
     white: string;
     black: string;
   };
-  sizes: {
-    xs: string;
-    sm: string;
-    smd: string;
-    md: string;
-    lg: string;
-    mdlg: string;
-    xl: string;
-    xll: string;
-  };
   fontWeights: {
-    regular: number;
     light: number;
+    regular: number;
+    semiRegular: number;
     medium: number;
     semiBold: number;
     bold: number;
@@ -38,12 +28,11 @@ export interface Theme extends DefaultTheme {
 export const greenTheme: Theme = {
   fonts: {
     primary: 'Arial, sans-serif',
-    secondary: 'Roboto, sans-serif',
-    topSection: 'Inria Sans',
-    sectionHeader: 'League Gothic',
-    skillsHeader: 'Jura', 
-    body: 'Kai', 
-    industries: 'Karantina' 
+    topSection: 'Inria Sans, sans-serif',
+    sectionHeader: 'League Gothic, sans-serif',
+    skillsHeader: 'Jura, sans-serif', 
+    body: 'Poppins, sans-serif', 
+    industries: 'Yanone Kaffeesatz, sans-serif'
   },
   colors: {
     primary: '#073E27', 
@@ -51,19 +40,10 @@ export const greenTheme: Theme = {
     white: '#FFFFFF', 
     black: '#000000' 
   },
-  sizes: {
-    'xs': '12px',
-    'sm': '14px',
-    'smd': '16px',
-    'md': '18px',
-    'lg': '24px',
-    'mdlg': '32px',
-    'xl': '40px',
-    'xll': '48px'
-  },
   fontWeights: {
+    light: 100,
     regular: 300,
-    light: 400,
+    semiRegular: 400,
     medium: 500,
     semiBold: 600,
     bold: 700

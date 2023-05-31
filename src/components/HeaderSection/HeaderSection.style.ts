@@ -6,14 +6,15 @@ import { fadeInAnimation, BouncingAnimation } from '../Shared/Animation';
 export const Name = styled.p<{ 
   isvisible: boolean, 
   color: string, 
-  topSection: string 
+  fontFamily: string,
+  fontWeight: string
 }>`
   width: 100%;
   color: ${(props) => props.color};
-  font-family: ${(props) => props.topSection};
+  font-family: ${(props) => props.fontFamily};
+  font-weight: ${(props) => props.fontWeight};
   font-size: 8rem;
   font-style: normal;
-  font-weight: 400;
   ${props => fadeInAnimation(props.isvisible)}
   @media (max-width: 414px) {
     font-size: 4em;
@@ -45,12 +46,13 @@ export const CertificationContainer = styled.div`
 
 export const Certification = styled.p<{ 
   isvisible: boolean, 
-  color: string 
+  color: string,
+  fontFamily: string,
+  fontWeight: string
 }>`
   margin: 0 0 0 24px;
-  font-family: 'Inria Serif';
-  font-style: normal;
-  font-weight: 100;
+  font-family:  ${(props) => props.fontFamily};
+  font-weight: ${(props) => props.fontWeight};
   font-size: 1rem;
   color: ${(props) => props.color};
   ${props => fadeInAnimation(props.isvisible)}
@@ -70,13 +72,14 @@ export const LocationDiv = styled.div`
 
 export const Location = styled.p<{ 
   isvisible: boolean, 
-  color: string 
+  color: string,
+  fontFamily: string,
+  fontWeight: string
 }>`
   width: 100%;
-  font-family: 'Jaldi';
+  font-family:  ${(props) => props.fontFamily};
+  font-weight: ${(props) => props.fontWeight};
   text-align: right;
-  font-style: normal;
-  font-weight: 400;
   font-size: 36px;
   line-height: 61px;
   color: ${(props) => props.color};

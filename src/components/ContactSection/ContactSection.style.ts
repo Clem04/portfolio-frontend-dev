@@ -24,29 +24,37 @@ export const LinkedInDiv = styled.div`
   margin-left: 8px;
 `
 
-export const SectionHeader = styled.p<{ isVisible: boolean }>`
+export const SectionHeader = styled.p<{ 
+  isVisible: boolean, 
+  fontFamily: string, 
+  color: string,
+  fontWeight: string
+}>`
   width: 100%;
   margin: 16px 0;
   height: fit-content;
-  font-family: 'League Gothic';
-  font-style: normal;
-  font-weight: 400;
+  font-family: ${props => props.fontFamily};
+  color: ${props => props.color};
+  font-weight: ${props => props.fontWeight};
   font-size: 2em;
   text-align: center;
-  color: #063320;
-  ${props => fadeInAnimation(props.isVisible)}
+  ${props => fadeInAnimation(props.isVisible)};
 `
 
-export const Text = styled.p<{ isVisible: boolean }>`
+export const Text = styled.p<{ 
+  isVisible: boolean, 
+  fontFamily: string, 
+  color: string,
+  fontWeight: string
+}>`
   margin-top: 40px;
   padding: 0 72px;
-  font-family: 'Kai';
-  font-style: normal;
-  font-weight: 400;
+  font-family: ${props => props.fontFamily};
+  color: ${props => props.color};
+  font-weight: ${props => props.fontWeight};
   font-size: 1rem;
   line-height: 24px;
   text-align: center;
-  color: #000000;
   ${props => fadeInAnimation(props.isVisible)}
   @media (max-width: 414px) {
     text-align: left;
