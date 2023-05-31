@@ -40,7 +40,7 @@ const Name = styled.p<SectionNameProps>`
   left: ${(props) => props.left?.desktop};
   right: ${(props) => props.right?.desktop};
   transform: translateX(${(props) =>
-    props.isvisible ? '0' : props.left ? '-50%' : props.right ? '50%' : '0'});
+    props.isvisible ? '0' : props.left ? '-5%' : props.right ? '5%' : '0'});
 
   @media (max-width: 414px) {
     font-size: 2.3em;
@@ -54,11 +54,6 @@ const Name = styled.p<SectionNameProps>`
     top: ${(props) => props.top?.tablet};
     left: ${(props) => props.left?.tablet};
     right: ${(props) => props.right?.tablet};
-  }
-
-  @media (max-width: 1024px) {
-    transform: translateX(${(props) =>
-      props.isvisible ? '0' : props.left ? '-5%' : props.right ? '5%' : '0'});
   }
 
   &.fade-in {
