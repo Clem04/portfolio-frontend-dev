@@ -53,165 +53,125 @@ export interface SkillsProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({ 
-  theme, dataTestId, isVisible, ...rest },ref) => {
+  theme, dataTestId, isVisible, ...rest }, ref) => {
 
-    const openPDF = () => {
-      const fileUrl = '/assets/resume.pdf';
-      window.open(fileUrl, '_blank');
-    };
-    
-    return (
-      <Section 
-        ref={ref} 
-        dataTestId={dataTestId} 
-        margin="50px 0"
-        {...rest}
+  const openPDF = () => {
+    const fileUrl = '/assets/resume.pdf';
+    window.open(fileUrl, '_blank');
+  };
+
+  const technicalSkills = [
+    { label: "React Js", Icon: ReactIcon, percentage: 90 },
+    { label: "React Testing Library", Icon: ReactTestingIcon, percentage: 80 },
+    { label: "Javascript", Icon: JavascriptIcon, percentage: 90 },
+    { label: "HTML5", Icon: HTMLIcon, percentage: 95 },
+    { label: "CSS", Icon: CSSIcon, percentage: 90 },
+    { label: "Typescript", Icon: TypescriptIcon, percentage: 80 },
+    { label: "Ruby on Rails", Icon: RubyOnRailsIcon, percentage: 70 },
+  ];
+
+  const designSkills = [
+    { skill: "Wireframe Prototypes", Icon: WireframesIcon },
+    { skill: "InVision", Icon: InVisionIcon },
+    { skill: "DesignPrincipls & Design Systems", Icon: DesignPrincipleIcon },
+    { skill: "Figma", Icon: FigmaIcon },
+    { skill: "Sketch Design", Icon: SketchIcon },
+    { skill: "Responsive Design", Icon: ResponsiveIcon },
+  ];
+
+  return (
+    <Section 
+      ref={ref} 
+      dataTestId={dataTestId} 
+      margin="50px 0"
+      {...rest}
+    >
+      <InnerSection
+        padding={{
+          desktop: "48px",
+          mobile: "24px"
+        }}
+        backgroundColor={theme.colors.white}
+        shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
       >
-        <InnerSection
-          padding={{
-            desktop: "48px",
-            mobile: "24px"
-          }}
-          backgroundColor={theme.colors.white}
-          shadow="13px 15px 24px rgba(0, 0, 0, 0.25), 15px 13px 24px rgba(0, 0, 0, 0.25)"
-        >
-          <Content>
-            <SectionName 
-              isVisible={isVisible}
-              textAlign="left" 
-              top={{
-                desktop: "-88px",
-                tablet: "-69px",
-                mobile: "-47px"
-              }}
-              left={{
-                desktop: "-88px",
-                tablet: "-69px",
-                mobile: "-36px"
-              }}
-            >
-              Skills
-            </SectionName>
-            <ProgressBar
-              progress={100}
-              width={{
-                desktop: "30%",
-                mobile: "72%"
-              }}
-              from="-356px" 
-              to="0"
-              color={theme.colors.primary}
-              isVisible={isVisible}
-            />
-            <TopSection>
-              <SkillsSectionName textAlign="left" name="Technical" />
-              <Hr width="100%" />
-              <SkillsContainerGrid >
-                <TechnicalCard 
-                  isVisible={isVisible} 
-                  progressColor={theme.colors.primary} 
-                  skillLabel="React Js" 
-                  percentage={90}
+        <Content>
+          <SectionName 
+            isVisible={isVisible}
+            textAlign="left" 
+            top={{
+              desktop: "-88px",
+              tablet: "-69px",
+              mobile: "-47px"
+            }}
+            left={{
+              desktop: "-88px",
+              tablet: "-69px",
+              mobile: "-36px"
+            }}
+          >
+            Skills
+          </SectionName>
+          <ProgressBar
+            progress={100}
+            width={{
+              desktop: "30%",
+              mobile: "72%"
+            }}
+            from="-356px" 
+            to="0"
+            color={theme.colors.primary}
+            isVisible={isVisible}
+          />
+          <TopSection>
+            <SkillsSectionName textAlign="left" name="Technical" />
+            <Hr width="100%" />
+            <SkillsContainerGrid>
+              {technicalSkills.map(({ label, Icon, percentage }) => (
+                <TechnicalCard
+                  key={label}
+                  isVisible={isVisible}
+                  progressColor={theme.colors.primary}
+                  skillLabel={label}
+                  percentage={percentage}
                 >
-                  <ReactIcon />
+                  <Icon />
                 </TechnicalCard>
-                <TechnicalCard 
-                  isVisible={isVisible} 
-                  progressColor={theme.colors.primary} 
-                  skillLabel="React Testing Library" 
-                  percentage={80}
-                >
-                  <ReactTestingIcon />
-                </TechnicalCard>
-                <TechnicalCard 
-                  isVisible={isVisible} 
-                  progressColor={theme.colors.primary} 
-                  skillLabel="Javascript" 
-                  percentage={90}
-                >
-                  <JavascriptIcon />
-                </TechnicalCard>
-                <TechnicalCard 
-                  isVisible={isVisible} 
-                  progressColor={theme.colors.primary} 
-                  skillLabel="HTML5" 
-                  percentage={95}
-                >
-                  <HTMLIcon />
-                </TechnicalCard>
-                <TechnicalCard 
-                  isVisible={isVisible} 
-                  progressColor={theme.colors.primary} 
-                  skillLabel="CSS" 
-                  percentage={90}
-                >
-                  <CSSIcon />
-                </TechnicalCard>
-                <TechnicalCard 
-                  isVisible={isVisible} 
-                  progressColor={theme.colors.primary} 
-                  skillLabel="Typescript" 
-                  percentage={80}
-                >
-                  <TypescriptIcon />
-                </TechnicalCard>
-                <TechnicalCard 
-                  isVisible={isVisible} 
-                  progressColor={theme.colors.primary} 
-                  skillLabel="Ruby on Rails" 
-                  percentage={70}
-                >
-                  <RubyOnRailsIcon />
-                </TechnicalCard>
-              </SkillsContainerGrid >
-            </TopSection>
-            <BottomSection isVisible={isVisible}>
-              <DesktopButtonContainer>
+              ))}
+            </SkillsContainerGrid>
+          </TopSection>
+          <BottomSection isVisible={isVisible}>
+            <DesktopButtonContainer>
+              <ResumeTitle>Download Me!</ResumeTitle>
+              <Button width="100%" onClick={openPDF}>Resume</Button>
+            </DesktopButtonContainer>
+            <BottomRightSection>
+              <SubSkills>
+                <Header>Language</Header>
+                <HrContainer><Hr width="100%" /></HrContainer>
+                <Language style={{ marginTop: "24px"}}>English</Language>
+                <Language>French</Language>
+              </SubSkills>
+              <SubSkills>
+                <Header textAlign="right">Design</Header>
+                <HrContainer><Hr width="100%" /></HrContainer>
+                <DesignSkillsGrid>
+                  {designSkills.map(({ skill, Icon }) => (
+                    <DesignCard key={skill} skill={skill}>
+                      <Icon />
+                    </DesignCard>
+                  ))}
+                </DesignSkillsGrid>
+              </SubSkills>
+              <MobileBottomContainer>
                 <ResumeTitle>Download Me!</ResumeTitle>
                 <Button width="100%" onClick={openPDF}>Resume</Button>
-              </DesktopButtonContainer>
-              <BottomRightSection>
-                <SubSkills>
-                  <Header>Language</Header>
-                  <HrContainer><Hr width="100%" /></HrContainer>
-                  <Language style={{ marginTop: "24px"}}>English</Language>
-                  <Language>French</Language>
-                </SubSkills>
-                <SubSkills>
-                  <Header textAlign="right">Design</Header>
-                  <HrContainer><Hr width="100%" /></HrContainer>
-                  <DesignSkillsGrid>
-                    <DesignCard skill="Wireframe Prototypes">
-                      <WireframesIcon />
-                    </DesignCard>
-                    <DesignCard skill="InVision">
-                      <InVisionIcon />
-                    </DesignCard>
-                    <DesignCard skill="DesignPrincipls & Design Systems">
-                      <DesignPrincipleIcon />
-                    </DesignCard>
-                    <DesignCard skill="Figma">
-                      <FigmaIcon />
-                    </DesignCard>
-                    <DesignCard skill="Sketch Design">
-                      <SketchIcon />
-                    </DesignCard>
-                    <DesignCard skill="Responsive Design">
-                      <ResponsiveIcon />
-                    </DesignCard>
-                  </DesignSkillsGrid>
-                </SubSkills>
-                <MobileBottomContainer>
-                  <ResumeTitle>Download Me!</ResumeTitle>
-                  <Button width="100%" onClick={openPDF}>Resume</Button>
-                </MobileBottomContainer>
-              </BottomRightSection>
-            </BottomSection>
-          </Content>
-        </InnerSection>
-      </Section>
-    );
-  }
-)
+              </MobileBottomContainer>
+            </BottomRightSection>
+          </BottomSection>
+        </Content>
+      </InnerSection>
+    </Section>
+  );
+});
 
 export default SkillsSection;
