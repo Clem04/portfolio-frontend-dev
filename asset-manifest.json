@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.js": "/portfolio-frontend-dev/static/js/main.ab15712a.js",
+    "static/js/787.29b17166.chunk.js": "/portfolio-frontend-dev/static/js/787.29b17166.chunk.js",
+    "static/media/tcu.svg": "/portfolio-frontend-dev/static/media/tcu.9579009a341607041d54aaf0d25b1cf8.svg",
+    "static/media/mcc.svg": "/portfolio-frontend-dev/static/media/mcc.148352026c25ab16a9edf55c47d4515c.svg",
+    "static/media/wagon.svg": "/portfolio-frontend-dev/static/media/wagon.387eff4914591ca3e5486ba2c8aba454.svg",
+    "static/media/invision.svg": "/portfolio-frontend-dev/static/media/invision.ddd5586537302dc96dd9687e8a44baf5.svg",
+    "static/media/ruby_rails.svg": "/portfolio-frontend-dev/static/media/ruby_rails.e681e6094baaee311dac7e6aeb1c0111.svg",
+    "static/media/wireframe.svg": "/portfolio-frontend-dev/static/media/wireframe.76ca46166c2e5ee63d74c4555bd8eff4.svg",
+    "static/media/react_testing_library.svg": "/portfolio-frontend-dev/static/media/react_testing_library.c19d75116f10a02b9681655c7c862ad0.svg",
+    "static/media/react.svg": "/portfolio-frontend-dev/static/media/react.b6e0f5c0a7da42df6d7524672059ed40.svg",
+    "static/media/css.svg": "/portfolio-frontend-dev/static/media/css.dc5d07440e4a42aba5a9f32a05fa4543.svg",
+    "static/media/github.svg": "/portfolio-frontend-dev/static/media/github.ea1a22dd9bc98edc1bb38c26a9c01f1c.svg",
+    "static/media/design_principles.svg": "/portfolio-frontend-dev/static/media/design_principles.6e8ebcad2862e9e803f212c7b04f04d6.svg",
+    "static/media/responsive_design.svg": "/portfolio-frontend-dev/static/media/responsive_design.330bde630e8eff7e238b79f3493eb62e.svg",
+    "static/media/figma.svg": "/portfolio-frontend-dev/static/media/figma.a7834485730a889f228b370e7716a59c.svg",
+    "static/media/html5.svg": "/portfolio-frontend-dev/static/media/html5.2557967357d6e084da315005ce63dda1.svg",
+    "static/media/linkedin.svg": "/portfolio-frontend-dev/static/media/linkedin.f237cd04fcb43d83a33f76cadb9dfdec.svg",
+    "static/media/location.svg": "/portfolio-frontend-dev/static/media/location.908d8d6e2b898fa830ede95cff907055.svg",
+    "index.html": "/portfolio-frontend-dev/index.html",
+    "static/media/sketch.svg": "/portfolio-frontend-dev/static/media/sketch.2ca0285b222a30bdeaaf128ba181e3f9.svg",
+    "static/media/arrow_down.svg": "/portfolio-frontend-dev/static/media/arrow_down.9649e711b2f21d8de920b76cae3ec3ce.svg",
+    "static/media/javascript.svg": "/portfolio-frontend-dev/static/media/javascript.82b04b61301dfcb6cdf4e38e1cc6a461.svg",
+    "static/media/typescript.svg": "/portfolio-frontend-dev/static/media/typescript.cc36ce8e213840087b65f1208a39c642.svg",
+    "main.ab15712a.js.map": "/portfolio-frontend-dev/static/js/main.ab15712a.js.map",
+    "787.29b17166.chunk.js.map": "/portfolio-frontend-dev/static/js/787.29b17166.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ab15712a.js"
+  ]
+}
