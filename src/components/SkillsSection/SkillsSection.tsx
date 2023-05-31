@@ -13,14 +13,13 @@ import {
   TopSection, 
   SkillsContainerGrid ,
   BottomSection,
-  DesktopButtonContainer,
+  ButtonContainer,
   ResumeTitle,
   BottomRightSection,
   SubSkills,
   Language,
   DesignSkillsGrid,
   HrContainer, 
-  MobileBottomContainer
 } from './SkillsSection.style'
 
 // Icons
@@ -157,7 +156,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
             </SkillsContainerGrid>
           </TopSection>
           <BottomSection isvisible={isvisible}>
-            <DesktopButtonContainer>
+            <ButtonContainer mobile={false}>
               <ResumeTitle 
                 fontFamily={theme.fonts.body}
                 color={theme.colors.primary}
@@ -174,7 +173,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
               >
                 Resume
               </Button>
-            </DesktopButtonContainer>
+            </ButtonContainer>
             <BottomRightSection>
               <SubSkills color={theme.colors.primary}>
                 <SkillsSectionName 
@@ -203,7 +202,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
                   ))}
                 </DesignSkillsGrid>
               </SubSkills>
-              <MobileBottomContainer>
+              <ButtonContainer mobile={true}>
                 <ResumeTitle 
                   fontFamily={theme.fonts.body}
                   color={theme.colors.primary}
@@ -220,7 +219,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
                 >
                   Resume
                 </Button>
-              </MobileBottomContainer>
+              </ButtonContainer>
             </BottomRightSection>
           </BottomSection>
         </Content>

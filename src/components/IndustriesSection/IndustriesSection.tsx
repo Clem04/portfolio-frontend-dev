@@ -35,6 +35,26 @@ interface IndustriesProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: IndustriesProps) {
+  const industries = [
+    {
+      name: "e-commerce",
+      color: theme.colors.black,
+      fontFamily: theme.fonts.industries,
+      fontWeight: theme.fontWeights.bold
+    },
+    {
+      name: "finance",
+      color: theme.colors.black,
+      fontFamily: theme.fonts.industries,
+      fontWeight: theme.fontWeights.bold
+    },
+    {
+      name: "health",
+      color: theme.colors.black,
+      fontFamily: theme.fonts.industries,
+      fontWeight: theme.fontWeights.bold
+    }
+  ];
 
   return (
     <Section 
@@ -82,31 +102,18 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
             <br /> I have worked in: 
           </SectionDescription>
           <GridIndustries isVisible={isvisible}>
-            <Industry 
-              borderRight={theme.colors.black} 
-              borderBottom={theme.colors.black}
-              color={theme.colors.black}
-              fontFamily={theme.fonts.industries}
-              fontWeight={theme.fontWeights.bold}
-            >
-              e-commerce
-            </Industry>
-            <Industry 
-              borderRight={theme.colors.black} 
-              borderBottom={theme.colors.black}
-              color={theme.colors.black}
-              fontFamily={theme.fonts.industries}
-              fontWeight={theme.fontWeights.bold}
-            >
-              finance
-            </Industry>
-            <Industry 
-              color={theme.colors.black}
-              fontFamily={theme.fonts.industries}
-              fontWeight={theme.fontWeights.bold}
-            >
-              health
-            </Industry>
+            {industries.map(industry => (
+              <Industry 
+                key={industry.name}
+                borderRight={theme.colors.black} 
+                borderBottom={theme.colors.black}
+                color={industry.color}
+                fontFamily={industry.fontFamily}
+                fontWeight={industry.fontWeight}
+              >
+                {industry.name}
+              </Industry>
+            ))}
           </GridIndustries>
         </Content>
       </InnerSection>

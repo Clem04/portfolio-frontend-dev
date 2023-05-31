@@ -116,20 +116,17 @@ export const Language = styled.p<{ fontFamily: string}>`
 `
 
 // Button
-export const DesktopButtonContainer = styled.div`
-  width 20%;
+export const ButtonContainer = styled.div<{ mobile: boolean }>`
+  width: ${(props) => (props.mobile ? "100%" : "20%")};
   display: flex;
   flex-wrap: wrap;
-  @media (max-width: 414px) {
-    display: none;
-  }
-`
 
-export const MobileBottomContainer = styled.div`
-  display: none;
   @media (max-width: 414px) {
-    width 100%;
-    display: block;
-    margin: 16px 0 32px 0;
+    display: ${(props) => (props.mobile ? "block" : "none")};
+    margin: ${(props) => (props.mobile ? "16px 0 32px 0" : "0")};
   }
-`
+
+  @media (min-width: 415px) {
+    display: ${(props) => (props.mobile ? "none" : "flex")};
+  }
+`;
