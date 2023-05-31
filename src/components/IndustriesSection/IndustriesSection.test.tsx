@@ -4,9 +4,16 @@ import IndustriesSection from './IndustriesSection';
 describe('IndustriesSection', () => {
   const theme = {
     colors: {
+      primary: '#000',
+      secondary: "#6DC19E",
       white: '#ffffff',
-      primary: '#000000',
+      black: "#000"
     },
+    fonts: {
+      sectionHeader: 'Arial',
+      body: 'Kai',
+      industries: 'Roboto'
+    }
   };
 
   test('renders the industries section with correct content and styles', () => {

@@ -9,9 +9,11 @@ interface TechnicalCardProps extends HTMLAttributes<HTMLDivElement> {
   progressColor: string;
   skillLabel: string;
   percentage: number;
+  color: string;
+  fontFamily: string;
 }
 
-export default function TechnicalCard({ isvisible, progressColor, skillLabel, percentage, children }: TechnicalCardProps) {
+export default function TechnicalCard({ isvisible, progressColor, skillLabel, percentage, children, color, fontFamily }: TechnicalCardProps) {
   return (
     <Card>
         <ProgressContainer>
@@ -23,9 +25,14 @@ export default function TechnicalCard({ isvisible, progressColor, skillLabel, pe
             {children}
           </CircleProgress>
         </ProgressContainer>
-        <SkillName>{skillLabel}</SkillName>
+        <SkillName fontFamily={fontFamily}>{skillLabel}</SkillName>
         <Hr width="20%" />
-        <Percentage>{percentage}%</Percentage>
+        <Percentage 
+          color={color} 
+          fontFamily={fontFamily}
+        >
+          {percentage}%
+        </Percentage>
     </Card>
   )
 }

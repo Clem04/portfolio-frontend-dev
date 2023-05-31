@@ -8,10 +8,10 @@ export const DesignSkillCard = styled.div`
   justify-self: center;
 `
 
-export const DesignSkillName = styled.p`
+export const DesignSkillName = styled.p<{ fontFamily: string }>`
   width: 100%;
-  font-family: 'Kai';
+  margin-top: 16px;
+  font-family: ${props => props.fontFamily};
   font-size: 0.7em;
   text-align: center;
-  margin-top: 16px;
 `

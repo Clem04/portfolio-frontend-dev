@@ -8,15 +8,18 @@ export const Content = styled.div`
   position: relative;
   align-content: space-between;
 `
-export const SectionDescription = styled.p<{ isVisible: boolean }>`
+export const SectionDescription = styled.p<{ 
+  isVisible: boolean, 
+  fontFamily: string, 
+  color: string 
+}>`
   width: 60%;
-  font-family: 'Kai';
-  font-style: normal;
+  font-family: ${props => props.fontFamily};
+  color: ${props => props.color};
   font-weight: 400;
   font-size: 1.5em;
   line-height: 36px;
-  color: #000000;
-  ${props => fadeInAnimation(props.isVisible)}
+  ${props => fadeInAnimation(props.isVisible)};
   @media (max-width: 414px) {
     width: 100%;
     font-size: 1em;
@@ -30,20 +33,25 @@ export const GridIndustries = styled.div<{ isVisible: boolean }>`
   grid-template-columns: repeat(3, 1fr);
   height: fit-content;
   margin-top: 32px;
-  ${props => fadeInAnimation(props.isVisible)}
+  ${props => fadeInAnimation(props.isVisible)};
   @media (max-width: 414px) {
     grid-template-columns: 1fr;
   }
 `
 
-export const Industry = styled.div<{borderRight?: string, borderBottom?: string}>`
+export const Industry = styled.div<{ 
+  borderRight?: string, 
+  borderBottom?: string,
+  fontFamily: string,
+  color: string
+}>`
   padding: 32px;
-  border-right: ${(props) => props.borderRight || 'auto'};
-  font-family: 'Karantina';
+  border-right: 1px solid ${(props) => props.borderRight || 'auto'};
+  font-family: ${props => props.fontFamily};
+  color:${props => props.color};
   font-style: normal;
   font-weight: 700;
   font-size: 3rem;
-  color: #000000;
   text-align: center;
   @media (max-width: 414px) {
     border-right: none;

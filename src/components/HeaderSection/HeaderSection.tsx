@@ -63,7 +63,7 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
             color={theme.colors.white}
             topSection={theme.fonts.topSection}
           >
-            Clemence Paiement.
+            Clémence Paiement.
           </Name>
           <Profession 
             isvisible={isvisible}

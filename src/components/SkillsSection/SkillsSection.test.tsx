@@ -7,7 +7,13 @@ describe('SkillsSection', () => {
     colors: {
       primary: '#000000',
       white: '#ffffff',
+      black: '#000000'
     },
+    fonts: {
+      sectionHeader: 'Arial',
+      skillsHeader: 'Roboto',
+      body: 'Kai'
+    }
   };
 
   test('renders the skills section with correct content and styles', () => {

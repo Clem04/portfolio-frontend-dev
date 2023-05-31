@@ -3,7 +3,6 @@ import { DefaultTheme } from 'styled-components';
 export interface Theme extends DefaultTheme {
   fonts: {
     primary: string;
-    secondary: string;
     topSection: string;
     sectionHeader: string;
     skillsHeader: string;
@@ -38,12 +37,11 @@ export interface Theme extends DefaultTheme {
 export const greenTheme: Theme = {
   fonts: {
     primary: 'Arial, sans-serif',
-    secondary: 'Roboto, sans-serif',
-    topSection: 'Inria Sans',
-    sectionHeader: 'League Gothic',
-    skillsHeader: 'Jura', 
-    body: 'Kai', 
-    industries: 'Karantina' 
+    topSection: 'Inria Sans, sans-serif',
+    sectionHeader: 'League Gothic, sans-serif',
+    skillsHeader: 'Jura, sans-serif', 
+    body: 'Poppins, sans-serif', 
+    industries: 'Yanone Kaffeesatz, sans-serif'
   },
   colors: {
     primary: '#073E27', 

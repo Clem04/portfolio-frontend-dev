@@ -10,6 +10,8 @@ describe('TechnicalCard component', () => {
         progressColor="#123456"
         skillLabel={skillLabel}
         percentage={90}
+        color="#000"
+        fontFamily="Arial"
       >
         Icon
       </TechnicalCard>
@@ -26,6 +28,8 @@ describe('TechnicalCard component', () => {
         progressColor="#123456"
         skillLabel="React Js"
         percentage={percentage}
+        color="#000"
+        fontFamily="Arial"
       >
         Icon
       </TechnicalCard>
@@ -42,6 +46,8 @@ describe('TechnicalCard component', () => {
         progressColor="#123456"
         skillLabel="React Js"
         percentage={90}
+        color="#000"
+        fontFamily="Arial"
       >
         {childrenText}
       </TechnicalCard>

@@ -11,9 +11,14 @@ import { ReactComponent as LeWagonImage } from "../assets/svg/education/wagon.sv
 
 interface Theme {
   colors: {
-    white: string;
     primary: string;
-  };
+    white: string;
+    black: string;
+  },
+  fonts: {
+    sectionHeader: string;
+    body: string;
+  }
 }
 
 interface EducationProps extends HTMLAttributes<HTMLDivElement> {
@@ -53,24 +58,57 @@ function EducationSection({ theme, dataTestId, sectionRef, isvisible }: Educatio
               mobile: "-21px"
             }}
             color={theme.colors.primary}
+            fontFamily={theme.fonts.sectionHeader}
           >
             Education
           </SectionName>
           <DegreesGrid isvisible={isvisible}>
             <DegreeCard>
               <TCUImage />
-              <DegreeType marginTop="24px">Bachelor of Science</DegreeType>
-              <Degree>Fashion Merchandising</Degree>
+              <DegreeType 
+                marginTop="24px"
+                fontFamily={theme.fonts.body}
+                color={theme.colors.black}
+              >
+                Bachelor of Science
+              </DegreeType>
+              <Degree
+                fontFamily={theme.fonts.body}
+                color={theme.colors.black}
+              >
+                Fashion Merchandising
+              </Degree>
             </DegreeCard>
             <DegreeCard>
               <MCCImage />
-              <DegreeType>Certificate Program</DegreeType>
-              <Degree>User Experience (UX) Design</Degree>
+              <DegreeType
+                fontFamily={theme.fonts.body}
+                color={theme.colors.black}
+              >
+                Certificate Program
+              </DegreeType>
+              <Degree
+                fontFamily={theme.fonts.body}
+                color={theme.colors.black}
+              >
+                User Experience (UX) Design
+              </Degree>
             </DegreeCard>
             <DegreeCard>
               <LeWagonImage />
-              <DegreeType marginTop="24px">Certificate Program</DegreeType>
-              <Degree>Computer Programming</Degree>
+              <DegreeType 
+                marginTop="24px"
+                fontFamily={theme.fonts.body}
+                color={theme.colors.black}
+              >
+                Certificate Program
+              </DegreeType>
+              <Degree
+                fontFamily={theme.fonts.body}
+                color={theme.colors.black}
+              >
+                Computer Programming
+              </Degree>
             </DegreeCard>
           </DegreesGrid>
         </Content>

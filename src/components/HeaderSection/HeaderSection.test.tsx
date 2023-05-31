@@ -28,7 +28,7 @@ describe('HeaderSection', () => {
     const headerSection = screen.getByTestId('header-section');
     expect(headerSection).toBeInTheDocument();
 
-    const nameElement = screen.getByText('Clemence Paiement.');
+    const nameElement = screen.getByText('Clémence Paiement.');
     expect(nameElement).toBeInTheDocument();
     expect(nameElement).toHaveStyle({ opacity: '1', color: 'white' });
 

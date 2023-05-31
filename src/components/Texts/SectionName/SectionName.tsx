@@ -5,6 +5,7 @@ interface SectionNameProps {
   children: React.ReactNode;
   textAlign: string;
   color: string;
+  fontFamily: string;
   top?: {
     desktop?: CSSProperties['top'];
     tablet?: CSSProperties['top'];
@@ -27,7 +28,7 @@ const Name = styled.p<SectionNameProps>`
   width: 100%;
   text-align: ${(props) => props.textAlign};
   color: ${(props) => props.color};
-  font-family: 'League Gothic';
+  font-family: ${(props) => props.fontFamily};
   font-style: normal;
   font-weight: 400;
   font-size: 4.2em;
@@ -73,6 +74,7 @@ export const SectionName: React.FC<SectionNameProps> = ({
   right,
   children,
   isvisible,
+  fontFamily,
   color
 }) => {
   return (
@@ -83,6 +85,7 @@ export const SectionName: React.FC<SectionNameProps> = ({
       right={right}
       isvisible={isvisible}
       className={isvisible ? 'fade-in' : ''}
+      fontFamily={fontFamily}
       color={color}
     >
       {children}

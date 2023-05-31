@@ -7,6 +7,9 @@ describe('ContactSection', () => {
       white: '#ffffff',
       primary: '#000000',
     },
+    fonts: {
+      body: 'Kai'
+    }
   };
 
   test('renders the contact section with correct content and styles', () => {

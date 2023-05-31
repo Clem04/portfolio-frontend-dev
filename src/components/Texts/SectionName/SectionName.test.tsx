@@ -7,9 +7,15 @@ describe('SectionName component', () => {
     const children = 'Section Name';
     const isVisible = true;
     const color = "green"
+    const fontFamily = "Arial"
 
     render(
-      <SectionName textAlign={textAlign} isvisible={isVisible} color={color}>
+      <SectionName 
+        textAlign={textAlign} 
+        isvisible={isVisible} 
+        color={color}
+        fontFamily={fontFamily}
+      >
         {children}
       </SectionName>
     );
@@ -24,9 +30,15 @@ describe('SectionName component', () => {
     const children = 'Section Name';
     const isVisible = true;
     const color = "green"
+    const fontFamily = "Arial"
 
     render(
-      <SectionName textAlign={textAlign} isvisible={isVisible} color={color}>
+      <SectionName 
+        textAlign={textAlign} 
+        isvisible={isVisible} 
+        color={color} 
+        fontFamily={fontFamily}
+      >
         {children}
       </SectionName>
     );
@@ -40,9 +52,15 @@ describe('SectionName component', () => {
     const children = 'Section Name';
     const isVisible = false;
     const color = "green"
+    const fontFamily = "Arial"
 
     render(
-      <SectionName textAlign={textAlign} isvisible={isVisible} color={color}>
+      <SectionName 
+        textAlign={textAlign} 
+        isvisible={isVisible} 
+        color={color}
+        fontFamily={fontFamily}
+      >
         {children}
       </SectionName>
     );

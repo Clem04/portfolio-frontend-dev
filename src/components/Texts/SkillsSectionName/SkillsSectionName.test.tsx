@@ -6,8 +6,15 @@ describe('SkillsSectionName component', () => {
     const name = 'Skills Section';
     const textAlign = 'center';
     const color = "#000000"
+    const fontFamily = "Arial"
 
-    render(<SkillsSectionName name={name} textAlign={textAlign} color={color}/>);
+    render(<SkillsSectionName 
+              name={name} 
+              textAlign={textAlign} 
+              color={color} 
+              fontFamily={fontFamily}
+              />
+            );
 
     const sectionNameElement = screen.getByText(name);
     expect(sectionNameElement).toBeInTheDocument();

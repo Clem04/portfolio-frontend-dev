@@ -21,7 +21,10 @@ interface Theme {
   colors: {
     white: string;
     primary: string;
-  };
+  },
+  fonts: {
+    body: string;
+  }
 }
 
 interface ContactProps extends HTMLAttributes<HTMLDivElement> {
@@ -69,7 +72,14 @@ function ContactSection({ theme, dataTestId, sectionRef, isvisible }: ContactPro
           <SectionHeader isVisible={isvisible}>Get in Touch!</SectionHeader>
           <ButtonContainer isVisible={isvisible}>
             <a href="mailto:iphona.paiement@gmail.com">
-              <Button width="100%">CONTACT</Button>
+              <Button 
+                width="100%"
+                backgroundColor={theme.colors.primary}
+                color={theme.colors.white}
+                fontFamily={theme.fonts.body}
+              >
+                CONTACT
+              </Button>
             </a>
           </ButtonContainer>
           <Text isVisible={isvisible}>

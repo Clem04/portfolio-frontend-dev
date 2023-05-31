@@ -4,22 +4,20 @@ export const Card = styled.div`
   width: 100%;
 `
 
-export const SkillName = styled.p`
+export const SkillName = styled.p<{ fontFamily: string }>`
   width: 100%;
   height: 16px;
+  margin: 16px 0;
+  font-family: ${props => props.fontFamily};
   font-size: 0.8em;
-  margin-top: 16px;
   text-align: center;
 `
-export const Percentage = styled.p`
-  margin-top: 24px;
-  font-family: 'Kai';
-  font-style: normal;
-  font-weight: 400;
+export const Percentage = styled.p<{ color: string, fontFamily: string }>`
+  margin-top: 16px;
+  font-family: ${props => props.fontFamily};
   font-size: 1em;
   text-align: center;
-  color: #063320;
-  margin-top: 8px;
+  color: ${props => props.color};
 `
 
 export const ProgressContainer = styled.div`
