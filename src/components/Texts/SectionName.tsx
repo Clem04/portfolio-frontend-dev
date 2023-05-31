@@ -19,7 +19,7 @@ interface SectionNameProps {
     tablet?: CSSProperties['right'];
     mobile?: CSSProperties['right'];
   };
-  isVisible: boolean; // Add isVisible prop
+  isVisible: boolean;
 }
 
 const Name = styled.p<SectionNameProps>`
@@ -38,7 +38,7 @@ const Name = styled.p<SectionNameProps>`
   left: ${(props) => props.left?.desktop};
   right: ${(props) => props.right?.desktop};
   transform: translateX(${(props) =>
-    props.isVisible ? '0' : props.left ? '-100%' : props.right ? '100%' : '0'});
+    props.isVisible ? '0' : props.left ? '-10%' : props.right ? '10%' : '0'});
 
   @media (max-width: 414px) {
     font-size: 2.3em;
@@ -66,7 +66,7 @@ export const SectionName: React.FC<SectionNameProps> = ({
   left,
   right,
   children,
-  isVisible, // Add isVisible prop
+  isVisible
 }) => {
   return (
     <Name
@@ -74,7 +74,7 @@ export const SectionName: React.FC<SectionNameProps> = ({
       top={top}
       left={left}
       right={right}
-      isVisible={isVisible} // Pass isVisible prop
+      isVisible={isVisible}
       className={isVisible ? 'fade-in' : ''}
     >
       {children}
