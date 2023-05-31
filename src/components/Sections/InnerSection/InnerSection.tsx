@@ -33,6 +33,7 @@ export const InnerSection: React.FC<InnerSectionProps> = ({
       shadow={shadow}
       border={border}
       padding={padding}
+      data-testid="inner-section-container"
     >
       {children}
     </Container>

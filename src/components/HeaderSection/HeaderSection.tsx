@@ -28,11 +28,11 @@ interface HeaderSectionProps extends HTMLAttributes<HTMLDivElement> {
   dataTestId: string;
   onClick: () => void;
   animate?: boolean;
-  isVisible: boolean;
+  isvisible: boolean;
 }
 
 export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
-  ({ theme, dataTestId, isVisible, onClick, animate,  ...rest }, ref) => {
+  ({ theme, dataTestId, isvisible, onClick, animate,  ...rest }, ref) => {
 
     const handleArrowDown = () => {
       onClick();
@@ -58,8 +58,19 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           }}
           border={`1px solid ${theme.colors.white}`}
         >
-          <Name isVisible={isVisible}>Clem Paiement.</Name>
-          <Profession isVisible={isVisible}>Software Frontend Engineer</Profession>
+          <Name 
+            isvisible={isvisible} 
+            color={theme.colors.white}
+            topSection={theme.fonts.topSection}
+          >
+            Clemence Paiement.
+          </Name>
+          <Profession 
+            isvisible={isvisible}
+            color={theme.colors.white}
+          >
+            Software Frontend Engineer
+          </Profession>
           <CertificationContainer>
             <ProgressBar
               progress={100}
@@ -71,17 +82,28 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
               from="-500px" 
               to="0"
               color={theme.colors.white}
-              isVisible={isVisible}
+              isvisible={isvisible}
             />
-            <Certification isVisible={isVisible}>
+            <Certification 
+              isvisible={isvisible}
+              color={theme.colors.white}
+            >
               Certified Ui/UX Designer
             </Certification>
           </CertificationContainer>
           <LocationDiv>
-            <Location isVisible={isVisible}>Canada</Location>
-            <IconLocation isVisible={isVisible} />
+            <Location 
+              isvisible={isvisible}
+              color={theme.colors.white}
+            >
+              Canada
+            </Location>
+            <IconLocation isvisible={isvisible} />
           </LocationDiv>
-          <ArrowDownIcon onClick={handleArrowDown} />
+          <ArrowDownIcon 
+            onClick={handleArrowDown} 
+            data-testid="arrow-down-icon" 
+          />
         </InnerSection>
       </Section>
     );

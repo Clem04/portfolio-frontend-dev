@@ -21,12 +21,12 @@ export const TopSection = styled.div`
   }
 `
 
-export const BottomSection = styled.div<{ isVisible: boolean }>`
+export const BottomSection = styled.div<{ isvisible: boolean }>`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ${props => fadeInAnimation(props.isVisible)}
+  ${props => fadeInAnimation(props.isvisible)}
   @media (max-width: 414px) {
     flex-wrap: wrap;
   }

@@ -6,7 +6,7 @@ interface CircleProgressProps {
   strokeWidth?: number;
   circleColor?: string;
   progressColor?: string;
-  isVisible: boolean;
+  isvisible: boolean;
   children: ReactNode
 }
 
@@ -15,7 +15,7 @@ const CircleProgress: React.FC<CircleProgressProps> = ({
   strokeWidth = 4,
   circleColor = '#eaeaea',
   progressColor = '#f44336',
-  isVisible,
+  isvisible,
   children
 }) => {
   const radius = 50 - strokeWidth;
@@ -43,7 +43,7 @@ const CircleProgress: React.FC<CircleProgressProps> = ({
         progressColor={progressColor}
         circumference={circumference}
         progressOffset={progressOffset}
-        animate={isVisible}
+        animate={isvisible}
       />
       {children}
     </Svg>

@@ -101,31 +101,31 @@ function App() {
           dataTestId="header-section"
           ref={headerSectionRef}
           onClick={handleArrowDown}
-          isVisible={isVisible.header}
+          isvisible={isVisible.header}
         />
         <SkillsSection
           theme={theme}
           dataTestId="skills-section"
           ref={skillsSectionRef}
-          isVisible={isVisible.skills}
+          isvisible={isVisible.skills}
         />
         <IndustriesSection 
           theme={theme} 
           dataTestId="industries-section" 
           sectionRef={industriesSectionRef}
-          isVisible={isVisible.industries}
+          isvisible={isVisible.industries}
         />
         <EducationSection 
           theme={theme} 
           dataTestId="education-section" 
           sectionRef={educationSectionRef}
-          isVisible={isVisible.education}
+          isvisible={isVisible.education}
         />
         <ContactSection 
           theme={theme} 
           dataTestId="contact-section" 
           sectionRef={contactSectionRef}
-          isVisible={isVisible.contact}
+          isvisible={isVisible.contact}
         />
       </Content>
     </AppContainer>

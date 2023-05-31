@@ -28,10 +28,10 @@ interface ContactProps extends HTMLAttributes<HTMLDivElement> {
   theme: Theme;
   dataTestId: string;
   sectionRef?: RefObject<HTMLDivElement>;
-  isVisible: boolean;
+  isvisible: boolean;
 }
 
-function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactProps) {
+function ContactSection({ theme, dataTestId, sectionRef, isvisible }: ContactProps) {
   return (
     <Section 
       ref={sectionRef}
@@ -47,7 +47,7 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
       >
         <Content>
           <TopSection>
-            <IconContainer isVisible={isVisible}>
+            <IconContainer isVisible={isvisible}>
               <GithubIcon />
               <LinkedInDiv>
                 <LinkedInIcon />
@@ -63,16 +63,16 @@ function ContactSection({ theme, dataTestId, sectionRef, isVisible }: ContactPro
               to="0"
               color={theme.colors.primary}
               transform="rotate(180deg)"
-              isVisible={isVisible}
+              isvisible={isvisible}
             />
           </TopSection>
-          <SectionHeader isVisible={isVisible}>Get in Touch!</SectionHeader>
-          <ButtonContainer isVisible={isVisible}>
+          <SectionHeader isVisible={isvisible}>Get in Touch!</SectionHeader>
+          <ButtonContainer isVisible={isvisible}>
             <a href="mailto:iphona.paiement@gmail.com">
               <Button width="100%">CONTACT</Button>
             </a>
           </ButtonContainer>
-          <Text isVisible={isVisible}>
+          <Text isVisible={isvisible}>
             Thank you for visiting my website! I'm thrilled to connect with you regarding the frontend software engineer role. I created this website to showcase my frontend development skills, and I believe it's a great platform to demonstrate my abilities.<br />
             <br />
             This website highlights my expertise in frontend development, particularly in creating visually appealing user interfaces. One of the highlights is an SVG file that I designed and implemented to enhance the overall user experience. It showcases my attention to detail and creativity in utilizing different web technologies.<br />

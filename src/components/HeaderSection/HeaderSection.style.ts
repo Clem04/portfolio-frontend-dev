@@ -3,24 +3,31 @@ import { ReactComponent as ArrowDown } from '../assets/svg/icons/arrow_down.svg'
 import { ReactComponent as LocationIcon } from '../assets/svg/icons/location.svg';
 import { fadeInAnimation, BouncingAnimation } from '../Shared/Animation';
 
-export const Name = styled.p<{ isVisible: boolean }>`
+export const Name = styled.p<{ 
+  isvisible: boolean, 
+  color: string, 
+  topSection: string 
+}>`
   width: 100%;
-  color: ${(props) => props.theme.colors.white};
-  font-family: ${(props) => props.theme.fonts.topSection};
+  color: ${(props) => props.color};
+  font-family: ${(props) => props.topSection};
   font-size: 8rem;
   font-style: normal;
   font-weight: 400;
-  ${props => fadeInAnimation(props.isVisible)}
+  ${props => fadeInAnimation(props.isvisible)}
   @media (max-width: 414px) {
     font-size: 4em;
   }
 `;
 
-export const Profession = styled.p<{ isVisible: boolean }>`
+export const Profession = styled.p<{ 
+  isvisible: boolean, 
+  color: string 
+}>`
   width: 100%;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.color};
   font-size: 2rem;
-  ${props => fadeInAnimation(props.isVisible)}
+  ${props => fadeInAnimation(props.isvisible)}
   @media (max-width: 414px) {
     font-size: 1.6rem;
   }
@@ -36,14 +43,17 @@ export const CertificationContainer = styled.div`
   }
 `;
 
-export const Certification = styled.p<{ isVisible: boolean }>`
+export const Certification = styled.p<{ 
+  isvisible: boolean, 
+  color: string 
+}>`
   margin: 0 0 0 24px;
   font-family: 'Inria Serif';
   font-style: normal;
   font-weight: 100;
   font-size: 1rem;
-  color: ${(props) => props.theme.colors.white};
-  ${props => fadeInAnimation(props.isVisible)}
+  color: ${(props) => props.color};
+  ${props => fadeInAnimation(props.isvisible)}
 
   @media (max-width: 1024px) {
     width: 38%;
@@ -58,7 +68,10 @@ export const LocationDiv = styled.div`
   align-items: center;
 `;
 
-export const Location = styled.p<{ isVisible: boolean }>`
+export const Location = styled.p<{ 
+  isvisible: boolean, 
+  color: string 
+}>`
   width: 100%;
   font-family: 'Jaldi';
   text-align: right;
@@ -66,18 +79,18 @@ export const Location = styled.p<{ isVisible: boolean }>`
   font-weight: 400;
   font-size: 36px;
   line-height: 61px;
-  color: ${(props) => props.theme.colors.white};
-  ${props => fadeInAnimation(props.isVisible)}
+  color: ${(props) => props.color};
+  ${props => fadeInAnimation(props.isvisible)}
   @media (max-width: 414px) {
     font-size: 1rem;
   }
 `;
 
-export const IconLocation = styled(LocationIcon)<{ isVisible: boolean }>`
+export const IconLocation = styled(LocationIcon)<{ isvisible: boolean }>`
   width: 32px;
   height: 32px;
   margin-left: 16px;
-  ${props => fadeInAnimation(props.isVisible)}
+  ${props => fadeInAnimation(props.isvisible)}
   @media (max-width: 414px) {
     width: 16px;
     height: 16px;
