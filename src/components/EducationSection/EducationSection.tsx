@@ -32,6 +32,25 @@ interface EducationProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 function EducationSection({ theme, dataTestId, sectionRef, isvisible }: EducationProps) {
+  const degrees = [
+    {
+      image: <TCUImage />,
+      degreeType: "Bachelor of Science",
+      degree: "Fashion Merchandising",
+      marginTop: "24px"
+    },
+    {
+      image: <MCCImage />,
+      degreeType: "Certificate Program",
+      degree: "User Experience (UX) Design"
+    },
+    {
+      image: <LeWagonImage />,
+      degreeType: "Certificate Program",
+      degree: "Computer Programming",
+      marginTop: "24px"
+    }
+  ];
 
   return (
     <Section
@@ -66,64 +85,31 @@ function EducationSection({ theme, dataTestId, sectionRef, isvisible }: Educatio
             Education
           </SectionName>
           <DegreesGrid isvisible={isvisible}>
-            <DegreeCard>
-              <TCUImage />
-              <DegreeType 
-                marginTop="24px"
-                fontFamily={theme.fonts.body}
-                color={theme.colors.black}
-                fontWeight={theme.fontWeights.semiRegular}
-              >
-                Bachelor of Science
-              </DegreeType>
-              <Degree
-                fontFamily={theme.fonts.body}
-                color={theme.colors.black}
-                fontWeight={theme.fontWeights.semiRegular}
-              >
-                Fashion Merchandising
-              </Degree>
-            </DegreeCard>
-            <DegreeCard>
-              <MCCImage />
-              <DegreeType
-                fontFamily={theme.fonts.body}
-                color={theme.colors.black}
-                fontWeight={theme.fontWeights.semiRegular}
-              >
-                Certificate Program
-              </DegreeType>
-              <Degree
-                fontFamily={theme.fonts.body}
-                color={theme.colors.black}
-                fontWeight={theme.fontWeights.semiRegular}
-              >
-                User Experience (UX) Design
-              </Degree>
-            </DegreeCard>
-            <DegreeCard>
-              <LeWagonImage />
-              <DegreeType 
-                marginTop="24px"
-                fontFamily={theme.fonts.body}
-                color={theme.colors.black}
-                fontWeight={theme.fontWeights.semiRegular}
-              >
-                Certificate Program
-              </DegreeType>
-              <Degree
-                fontFamily={theme.fonts.body}
-                color={theme.colors.black}
-                fontWeight={theme.fontWeights.semiRegular}
-              >
-                Computer Programming
-              </Degree>
-            </DegreeCard>
+            {degrees.map((degree, index) => (
+              <DegreeCard key={index}>
+                {degree.image}
+                <DegreeType
+                  marginTop={degree.marginTop}
+                  fontFamily={theme.fonts.body}
+                  color={theme.colors.black}
+                  fontWeight={theme.fontWeights.semiRegular}
+                >
+                  {degree.degreeType}
+                </DegreeType>
+                <Degree
+                  fontFamily={theme.fonts.body}
+                  color={theme.colors.black}
+                  fontWeight={theme.fontWeights.semiRegular}
+                >
+                  {degree.degree}
+                </Degree>
+              </DegreeCard>
+            ))}
           </DegreesGrid>
         </Content>
       </InnerSection>
     </Section>
-  )
+  );
 }
 
 export default EducationSection;
