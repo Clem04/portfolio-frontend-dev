@@ -14,7 +14,7 @@ describe('EducationSection', () => {
       <EducationSection
         theme={theme}
         dataTestId="education-section"
-        isVisible={true}
+        isvisible={true}
       />
     );
 

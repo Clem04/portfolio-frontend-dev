@@ -20,10 +20,10 @@ interface IndustriesProps extends HTMLAttributes<HTMLDivElement> {
   theme: Theme;
   dataTestId: string;
   sectionRef?: RefObject<HTMLDivElement>;
-  isVisible: boolean;
+  isvisible: boolean;
 }
 
-function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: IndustriesProps) {
+function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: IndustriesProps) {
 
   return (
     <Section 
@@ -40,7 +40,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
       >
         <Content>
           <SectionName 
-            isVisible={isVisible}
+            isvisible={isvisible}
             textAlign="right"
             top={{
               tablet: "-55px",
@@ -56,7 +56,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
           >
             Industries
           </SectionName>
-          <SectionDescription isVisible={isVisible}>
+          <SectionDescription isVisible={isvisible}>
             On my resume, 
             you will find my experience 
             across various industries and I am 
@@ -64,7 +64,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isVisible }: Industr
             sectors as well. Here are some of the industries 
             <br /> I have worked in: 
           </SectionDescription>
-          <GridIndustries isVisible={isVisible}>
+          <GridIndustries isVisible={isvisible}>
             <Industry borderRight="1px solid black" borderBottom="1px solid black">e-commerce</Industry>
             <Industry borderRight="1px solid black" borderBottom="1px solid black">finance</Industry>
             <Industry>health</Industry>

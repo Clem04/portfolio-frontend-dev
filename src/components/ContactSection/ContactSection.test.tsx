@@ -14,7 +14,7 @@ describe('ContactSection', () => {
       <ContactSection
         theme={theme}
         dataTestId="contact-section"
-        isVisible={true}
+        isvisible={true}
       />
     );
 

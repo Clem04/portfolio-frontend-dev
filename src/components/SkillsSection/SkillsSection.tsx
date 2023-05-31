@@ -49,11 +49,11 @@ interface Theme {
 export interface SkillsProps extends HTMLAttributes<HTMLDivElement> {
   theme: Theme;
   dataTestId: string;
-  isVisible: boolean;
+  isvisible: boolean;
 }
 
 const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({ 
-  theme, dataTestId, isVisible, ...rest }, ref) => {
+  theme, dataTestId, isvisible, ...rest }, ref) => {
 
   const openPDF = () => {
     const fileUrl = '/assets/resume.pdf';
@@ -96,7 +96,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
       >
         <Content>
           <SectionName 
-            isVisible={isVisible}
+            isvisible={isvisible}
             textAlign="left" 
             top={{
               desktop: "-88px",
@@ -121,7 +121,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
             from="-356px" 
             to="0"
             color={theme.colors.primary}
-            isVisible={isVisible}
+            isvisible={isvisible}
           />
           <TopSection>
             <SkillsSectionName 
@@ -134,7 +134,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
               {technicalSkills.map(({ label, Icon, percentage }) => (
                 <TechnicalCard
                   key={label}
-                  isVisible={isVisible}
+                  isvisible={isvisible}
                   progressColor={theme.colors.primary}
                   skillLabel={label}
                   percentage={percentage}
@@ -144,7 +144,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
               ))}
             </SkillsContainerGrid>
           </TopSection>
-          <BottomSection isVisible={isVisible}>
+          <BottomSection isvisible={isvisible}>
             <DesktopButtonContainer>
               <ResumeTitle>Download Me!</ResumeTitle>
               <Button width="100%" onClick={openPDF}>Resume</Button>

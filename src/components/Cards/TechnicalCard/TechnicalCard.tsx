@@ -4,20 +4,20 @@ import CircleProgress from '../../CircleProgress/CircleProgress';
 import Hr from "../../Hr/Hr";
 
 interface TechnicalCardProps extends HTMLAttributes<HTMLDivElement> {
-  isVisible: boolean;
+  isvisible: boolean;
   children: ReactNode;
   progressColor: string;
   skillLabel: string;
   percentage: number;
 }
 
-export default function TechnicalCard({ isVisible, progressColor, skillLabel, percentage, children }: TechnicalCardProps) {
+export default function TechnicalCard({ isvisible, progressColor, skillLabel, percentage, children }: TechnicalCardProps) {
   return (
     <Card>
         <ProgressContainer>
           <CircleProgress 
             percentage={percentage} 
-            isVisible={isVisible} 
+            isvisible={isvisible} 
             progressColor={progressColor}
           >
             {children}

@@ -6,7 +6,7 @@ describe('TechnicalCard component', () => {
     const skillLabel = 'React Js';
     render(
       <TechnicalCard
-        isVisible={true}
+        isvisible={true}
         progressColor="#123456"
         skillLabel={skillLabel}
         percentage={90}
@@ -22,7 +22,7 @@ describe('TechnicalCard component', () => {
     const percentage = 90;
     render(
       <TechnicalCard
-        isVisible={true}
+        isvisible={true}
         progressColor="#123456"
         skillLabel="React Js"
         percentage={percentage}
@@ -38,7 +38,7 @@ describe('TechnicalCard component', () => {
     const childrenText = 'Icon';
     render(
       <TechnicalCard
-        isVisible={true}
+        isvisible={true}
         progressColor="#123456"
         skillLabel="React Js"
         percentage={90}

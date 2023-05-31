@@ -23,14 +23,14 @@ export const Progress = styled.div<{
     from: string, 
     to: string, 
     color: string;
-    isVisible: boolean 
+    isvisible: boolean 
 }>`
-  display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
+  display: ${({ isvisible }) => (isvisible ? 'block' : 'none')};
   width: ${({ progress }) => progress}%;
   height: 1px;
   background-color: ${({ color }) => color};
-  animation: ${({ from, to, isVisible }) =>
-    isVisible ? css`${slidingAnimation(from, to)} 1s ease-out` : 'none'};
+  animation: ${({ from, to, isvisible }) =>
+    isvisible ? css`${slidingAnimation(from, to)} 1s ease-out` : 'none'};
   animation-fill-mode: forwards;
 `;
   

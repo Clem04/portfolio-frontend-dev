@@ -28,11 +28,11 @@ interface HeaderSectionProps extends HTMLAttributes<HTMLDivElement> {
   dataTestId: string;
   onClick: () => void;
   animate?: boolean;
-  isVisible: boolean;
+  isvisible: boolean;
 }
 
 export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
-  ({ theme, dataTestId, isVisible, onClick, animate,  ...rest }, ref) => {
+  ({ theme, dataTestId, isvisible, onClick, animate,  ...rest }, ref) => {
 
     const handleArrowDown = () => {
       onClick();
@@ -59,14 +59,14 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           border={`1px solid ${theme.colors.white}`}
         >
           <Name 
-            isVisible={isVisible} 
+            isvisible={isvisible} 
             color={theme.colors.white}
             topSection={theme.fonts.topSection}
           >
             Clemence Paiement.
           </Name>
           <Profession 
-            isVisible={isVisible}
+            isvisible={isvisible}
             color={theme.colors.white}
           >
             Software Frontend Engineer
@@ -82,10 +82,10 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
               from="-500px" 
               to="0"
               color={theme.colors.white}
-              isVisible={isVisible}
+              isvisible={isvisible}
             />
             <Certification 
-              isVisible={isVisible}
+              isvisible={isvisible}
               color={theme.colors.white}
             >
               Certified Ui/UX Designer
@@ -93,12 +93,12 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           </CertificationContainer>
           <LocationDiv>
             <Location 
-              isVisible={isVisible}
+              isvisible={isvisible}
               color={theme.colors.white}
             >
               Canada
             </Location>
-            <IconLocation isVisible={isVisible} />
+            <IconLocation isvisible={isvisible} />
           </LocationDiv>
           <ArrowDownIcon 
             onClick={handleArrowDown} 

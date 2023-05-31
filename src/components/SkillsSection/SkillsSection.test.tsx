@@ -15,7 +15,7 @@ describe('SkillsSection', () => {
       <SkillsSection
         theme={theme}
         dataTestId="skills-section"
-        isVisible={true}
+        isvisible={true}
       />
     );
 

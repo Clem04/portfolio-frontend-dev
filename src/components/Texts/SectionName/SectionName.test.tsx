@@ -9,7 +9,7 @@ describe('SectionName component', () => {
     const color = "green"
 
     render(
-      <SectionName textAlign={textAlign} isVisible={isVisible} color={color}>
+      <SectionName textAlign={textAlign} isvisible={isVisible} color={color}>
         {children}
       </SectionName>
     );
@@ -26,7 +26,7 @@ describe('SectionName component', () => {
     const color = "green"
 
     render(
-      <SectionName textAlign={textAlign} isVisible={isVisible} color={color}>
+      <SectionName textAlign={textAlign} isvisible={isVisible} color={color}>
         {children}
       </SectionName>
     );
@@ -42,7 +42,7 @@ describe('SectionName component', () => {
     const color = "green"
 
     render(
-      <SectionName textAlign={textAlign} isVisible={isVisible} color={color}>
+      <SectionName textAlign={textAlign} isvisible={isVisible} color={color}>
         {children}
       </SectionName>
     );

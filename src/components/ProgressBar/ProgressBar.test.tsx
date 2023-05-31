@@ -12,7 +12,7 @@ describe('ProgressBar component', () => {
       <ProgressBar
         progress={progress}
         color={color}
-        isVisible={isVisible}
+        isvisible={isVisible}
         from={from}
         to={to}
       />
@@ -40,7 +40,7 @@ describe('ProgressBar component', () => {
       <ProgressBar
         progress={progress}
         color={color}
-        isVisible={isVisible}
+        isvisible={isVisible}
         from={from}
         to={to}
       />
@@ -66,7 +66,7 @@ describe('ProgressBar component', () => {
       <ProgressBar
         progress={progress}
         color={color}
-        isVisible={isVisible}
+        isvisible={isVisible}
         from={from}
         to={to}
       />

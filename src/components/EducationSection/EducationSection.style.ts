@@ -13,12 +13,12 @@ export const Content = styled.div`
   }
 `
 
-export const DegreesGrid = styled.div<{ isVisible: boolean }>`
+export const DegreesGrid = styled.div<{ isvisible: boolean }>`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 10px;
   margin-top: 32px;
-  ${props => fadeInAnimation(props.isVisible)}
+  ${props => fadeInAnimation(props.isvisible)}
   @media (max-width: 414px) {
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 64px;

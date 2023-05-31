@@ -20,7 +20,7 @@ interface SectionNameProps {
     tablet?: CSSProperties['right'];
     mobile?: CSSProperties['right'];
   };
-  isVisible: boolean;
+  isvisible: boolean;
 }
 
 const Name = styled.p<SectionNameProps>`
@@ -39,7 +39,7 @@ const Name = styled.p<SectionNameProps>`
   left: ${(props) => props.left?.desktop};
   right: ${(props) => props.right?.desktop};
   transform: translateX(${(props) =>
-    props.isVisible ? '0' : props.left ? '-50%' : props.right ? '50%' : '0'});
+    props.isvisible ? '0' : props.left ? '-50%' : props.right ? '50%' : '0'});
 
   @media (max-width: 414px) {
     font-size: 2.3em;
@@ -57,7 +57,7 @@ const Name = styled.p<SectionNameProps>`
 
   @media (max-width: 1024px) {
     transform: translateX(${(props) =>
-      props.isVisible ? '0' : props.left ? '-5%' : props.right ? '5%' : '0'});
+      props.isvisible ? '0' : props.left ? '-5%' : props.right ? '5%' : '0'});
   }
 
   &.fade-in {
@@ -72,7 +72,7 @@ export const SectionName: React.FC<SectionNameProps> = ({
   left,
   right,
   children,
-  isVisible,
+  isvisible,
   color
 }) => {
   return (
@@ -81,8 +81,8 @@ export const SectionName: React.FC<SectionNameProps> = ({
       top={top}
       left={left}
       right={right}
-      isVisible={isVisible}
-      className={isVisible ? 'fade-in' : ''}
+      isvisible={isvisible}
+      className={isvisible ? 'fade-in' : ''}
       color={color}
     >
       {children}

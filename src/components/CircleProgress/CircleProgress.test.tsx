@@ -10,7 +10,7 @@ describe('CircleProgress component', () => {
         strokeWidth={4}
         circleColor="#eaeaea"
         progressColor="#f44336"
-        isVisible={true}
+        isvisible={true}
       >
         Icon
       </CircleProgress>
@@ -25,7 +25,7 @@ describe('CircleProgress component', () => {
         strokeWidth={4}
         circleColor="#eaeaea"
         progressColor="#f44336"
-        isVisible={true}
+        isvisible={true}
       >
         {childrenText}
       </CircleProgress>

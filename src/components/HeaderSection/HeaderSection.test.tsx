@@ -19,7 +19,7 @@ describe('HeaderSection', () => {
       <HeaderSection
         theme={theme}
         dataTestId="header-section"
-        isVisible={true}
+        isvisible={true}
         onClick={handleClick}
         animate={true}
       />

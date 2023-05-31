@@ -20,10 +20,10 @@ interface EducationProps extends HTMLAttributes<HTMLDivElement> {
   theme: Theme;
   dataTestId: string;
   sectionRef?: RefObject<HTMLDivElement>;
-  isVisible: boolean;
+  isvisible: boolean;
 }
 
-function EducationSection({ theme, dataTestId, sectionRef, isVisible }: EducationProps) {
+function EducationSection({ theme, dataTestId, sectionRef, isvisible }: EducationProps) {
 
   return (
     <Section
@@ -40,7 +40,7 @@ function EducationSection({ theme, dataTestId, sectionRef, isVisible }: Educatio
       >
         <Content>
           <SectionName
-            isVisible={isVisible} 
+            isvisible={isvisible} 
             textAlign="left"
             top={{
               desktop: "-38px",
@@ -56,7 +56,7 @@ function EducationSection({ theme, dataTestId, sectionRef, isVisible }: Educatio
           >
             Education
           </SectionName>
-          <DegreesGrid isVisible={isVisible}>
+          <DegreesGrid isvisible={isvisible}>
             <DegreeCard>
               <TCUImage />
               <DegreeType marginTop="24px">Bachelor of Science</DegreeType>

@@ -9,8 +9,8 @@ export const fadeIn = (from: string, to: string) => keyframes`
   }
 `;
 
-export const fadeInAnimation = (isVisible: boolean) => css`
-  opacity: ${isVisible ? '1' : '0'};
+export const fadeInAnimation = (isvisible: boolean) => css`
+  opacity: ${isvisible ? '1' : '0'};
   animation: ${fadeIn('0', '1')} 2s ease-in-out;
   transition: opacity 1s;
 `;
