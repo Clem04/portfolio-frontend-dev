@@ -11,6 +11,9 @@ describe('EducationSection', () => {
     fonts: {
       sectionHeader: 'Arial',
       body: 'Roboto'
+    },
+    fontWeights: {
+      semiRegular: "400"
     }
   };
 

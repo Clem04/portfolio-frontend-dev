@@ -17,10 +17,16 @@ interface Theme {
   colors: {
     primary: string;
     white: string;
-  };
+  },
   fonts: {
     topSection: string;
-  };
+    industries: string;
+  },
+  fontWeights: {
+    light: string;
+    semiRegular: string;
+    bold: string;
+  }
 }
 
 interface HeaderSectionProps extends HTMLAttributes<HTMLDivElement> {
@@ -61,7 +67,8 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
           <Name 
             isvisible={isvisible} 
             color={theme.colors.white}
-            topSection={theme.fonts.topSection}
+            fontFamily={theme.fonts.topSection}
+            fontWeight={theme.fontWeights.semiRegular}
           >
             Clémence Paiement.
           </Name>
@@ -87,6 +94,8 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
             <Certification 
               isvisible={isvisible}
               color={theme.colors.white}
+              fontFamily={theme.fonts.topSection}
+              fontWeight={theme.fontWeights.light}
             >
               Certified Ui/UX Designer
             </Certification>
@@ -95,6 +104,8 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
             <Location 
               isvisible={isvisible}
               color={theme.colors.white}
+              fontFamily={theme.fonts.industries}
+              fontWeight={theme.fontWeights.bold}
             >
               Canada
             </Location>

@@ -19,11 +19,17 @@ import { ReactComponent as LinkedInIcon } from "../assets/svg/icons/linkedin.svg
 
 interface Theme {
   colors: {
-    white: string;
     primary: string;
+    white: string;
+    black: string;
   },
   fonts: {
+    sectionHeader: string;
     body: string;
+  },
+  fontWeights: {
+    light: string;
+    semiBold: string;
   }
 }
 
@@ -69,7 +75,14 @@ function ContactSection({ theme, dataTestId, sectionRef, isvisible }: ContactPro
               isvisible={isvisible}
             />
           </TopSection>
-          <SectionHeader isVisible={isvisible}>Get in Touch!</SectionHeader>
+          <SectionHeader 
+            isVisible={isvisible}
+            fontFamily={theme.fonts.sectionHeader}
+            color={theme.colors.black}
+            fontWeight={theme.fontWeights.semiBold}
+          >
+            Get in Touch!
+          </SectionHeader>
           <ButtonContainer isVisible={isvisible}>
             <a href="mailto:iphona.paiement@gmail.com">
               <Button 
@@ -77,12 +90,18 @@ function ContactSection({ theme, dataTestId, sectionRef, isvisible }: ContactPro
                 backgroundColor={theme.colors.primary}
                 color={theme.colors.white}
                 fontFamily={theme.fonts.body}
+                fontWeight={theme.fontWeights.light}
               >
                 CONTACT
               </Button>
             </a>
           </ButtonContainer>
-          <Text isVisible={isvisible}>
+          <Text 
+            isVisible={isvisible}
+            fontFamily={theme.fonts.sectionHeader}
+            color={theme.colors.black}
+            fontWeight={theme.fontWeights.light}
+          >
             Thank you for visiting my website! I'm thrilled to connect with you regarding the frontend software engineer role. I created this website to showcase my frontend development skills, and I believe it's a great platform to demonstrate my abilities.<br />
             <br />
             This website highlights my expertise in frontend development, particularly in creating visually appealing user interfaces. One of the highlights is an SVG file that I designed and implemented to enhance the overall user experience. It showcases my attention to detail and creativity in utilizing different web technologies.<br />

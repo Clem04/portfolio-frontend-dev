@@ -9,7 +9,13 @@ describe('HeaderSection', () => {
     },
     fonts: {
       topSection: 'Arial',
+      industries: 'Roboto'
     },
+    fontWeights: {
+      light: '100',
+      semiRegular: "400",
+      bold: "700"
+    }
   };
 
   const handleClick = jest.fn();

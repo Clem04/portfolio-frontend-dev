@@ -9,6 +9,7 @@ describe('Button component', () => {
         backgroundColor="#000"
         color="#FFF"
         fontFamily="Arial"
+        fontWeight="100"
       >
         Click me
       </Button>
@@ -25,6 +26,7 @@ describe('Button component', () => {
         backgroundColor="#000"
         color="#FFF"
         fontFamily="Arial"
+        fontWeight="100"
         onClick={handleClick}
       >
         Click me
@@ -42,6 +44,7 @@ describe('Button component', () => {
         backgroundColor="#000"
         color="#FFF"
         fontFamily="Arial"
+        fontWeight="100"
       >
         Click me
       </Button>

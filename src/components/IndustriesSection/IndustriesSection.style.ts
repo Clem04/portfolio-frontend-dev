@@ -11,12 +11,13 @@ export const Content = styled.div`
 export const SectionDescription = styled.p<{ 
   isVisible: boolean, 
   fontFamily: string, 
-  color: string 
+  color: string,
+  fontWeight: string
 }>`
   width: 60%;
   font-family: ${props => props.fontFamily};
   color: ${props => props.color};
-  font-weight: 400;
+  font-weight: ${props => props.fontWeight};
   font-size: 1.5em;
   line-height: 36px;
   ${props => fadeInAnimation(props.isVisible)};
@@ -43,14 +44,14 @@ export const Industry = styled.div<{
   borderRight?: string, 
   borderBottom?: string,
   fontFamily: string,
+  fontWeight: string,
   color: string
 }>`
   padding: 32px;
   border-right: 1px solid ${(props) => props.borderRight || 'auto'};
   font-family: ${props => props.fontFamily};
   color:${props => props.color};
-  font-style: normal;
-  font-weight: 700;
+  font-weight: ${props => props.fontWeight};
   font-size: 3rem;
   text-align: center;
   @media (max-width: 414px) {

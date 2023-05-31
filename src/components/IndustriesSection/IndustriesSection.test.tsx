@@ -13,6 +13,10 @@ describe('IndustriesSection', () => {
       sectionHeader: 'Arial',
       body: 'Kai',
       industries: 'Roboto'
+    },
+    fontWeights: {
+      semiRegular: "400",
+      bold: "700"
     }
   };
 

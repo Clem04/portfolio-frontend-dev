@@ -20,6 +20,10 @@ interface Theme {
     sectionHeader: string;
     body: string;
     industries: string;
+  },
+  fontWeights: {
+    semiRegular: string;
+    bold: string;
   }
 }
 
@@ -68,6 +72,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
             isVisible={isvisible}
             color={theme.colors.black}
             fontFamily={theme.fonts.body}
+            fontWeight={theme.fontWeights.semiRegular}
           >
             On my resume, 
             you will find my experience 
@@ -82,6 +87,7 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
               borderBottom={theme.colors.black}
               color={theme.colors.black}
               fontFamily={theme.fonts.industries}
+              fontWeight={theme.fontWeights.bold}
             >
               e-commerce
             </Industry>
@@ -90,12 +96,14 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
               borderBottom={theme.colors.black}
               color={theme.colors.black}
               fontFamily={theme.fonts.industries}
+              fontWeight={theme.fontWeights.bold}
             >
               finance
             </Industry>
             <Industry 
               color={theme.colors.black}
               fontFamily={theme.fonts.industries}
+              fontWeight={theme.fontWeights.bold}
             >
               health
             </Industry>

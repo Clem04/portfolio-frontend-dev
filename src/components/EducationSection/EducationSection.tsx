@@ -18,6 +18,9 @@ interface Theme {
   fonts: {
     sectionHeader: string;
     body: string;
+  },
+  fontWeights: {
+    semiRegular: string;
   }
 }
 
@@ -69,12 +72,14 @@ function EducationSection({ theme, dataTestId, sectionRef, isvisible }: Educatio
                 marginTop="24px"
                 fontFamily={theme.fonts.body}
                 color={theme.colors.black}
+                fontWeight={theme.fontWeights.semiRegular}
               >
                 Bachelor of Science
               </DegreeType>
               <Degree
                 fontFamily={theme.fonts.body}
                 color={theme.colors.black}
+                fontWeight={theme.fontWeights.semiRegular}
               >
                 Fashion Merchandising
               </Degree>
@@ -84,12 +89,14 @@ function EducationSection({ theme, dataTestId, sectionRef, isvisible }: Educatio
               <DegreeType
                 fontFamily={theme.fonts.body}
                 color={theme.colors.black}
+                fontWeight={theme.fontWeights.semiRegular}
               >
                 Certificate Program
               </DegreeType>
               <Degree
                 fontFamily={theme.fonts.body}
                 color={theme.colors.black}
+                fontWeight={theme.fontWeights.semiRegular}
               >
                 User Experience (UX) Design
               </Degree>
@@ -100,12 +107,14 @@ function EducationSection({ theme, dataTestId, sectionRef, isvisible }: Educatio
                 marginTop="24px"
                 fontFamily={theme.fonts.body}
                 color={theme.colors.black}
+                fontWeight={theme.fontWeights.semiRegular}
               >
                 Certificate Program
               </DegreeType>
               <Degree
                 fontFamily={theme.fonts.body}
                 color={theme.colors.black}
+                fontWeight={theme.fontWeights.semiRegular}
               >
                 Computer Programming
               </Degree>

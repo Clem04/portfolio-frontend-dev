@@ -48,6 +48,9 @@ interface Theme {
     sectionHeader: string;
     skillsHeader: string;
     body: string;
+  },
+  fontWeights: {
+    light: string;
   }
 }
 
@@ -167,6 +170,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
                 backgroundColor={theme.colors.primary}
                 color={theme.colors.white}
                 fontFamily={theme.fonts.body}
+                fontWeight={theme.fontWeights.light}
               >
                 Resume
               </Button>
@@ -211,6 +215,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
                   backgroundColor={theme.colors.primary}
                   color={theme.colors.white}
                   fontFamily={theme.fonts.body}
+                  fontWeight={theme.fontWeights.light}
                   onClick={openPDF}
                 >
                   Resume

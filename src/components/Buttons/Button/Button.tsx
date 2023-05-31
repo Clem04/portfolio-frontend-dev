@@ -6,10 +6,11 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   width: string;
   backgroundColor: string,
   color: string,
-  fontFamily: string
+  fontFamily: string,
+  fontWeight: string
 }
 
-export default function Button({ children, width, backgroundColor, color, fontFamily, onClick }: ButtonProps) {
+export default function Button({ children, width, backgroundColor, color, fontFamily, fontWeight, onClick }: ButtonProps) {
   return (
     <StyledButton 
       type="button" 
@@ -17,6 +18,7 @@ export default function Button({ children, width, backgroundColor, color, fontFa
       backgroundColor={backgroundColor}
       color={color}
       fontFamily={fontFamily}
+      fontWeight={fontWeight}
       onClick={onClick}
     >
       {children}

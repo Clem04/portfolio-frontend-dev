@@ -13,6 +13,9 @@ describe('SkillsSection', () => {
       sectionHeader: 'Arial',
       skillsHeader: 'Roboto',
       body: 'Kai'
+    },
+    fontWeights: {
+      light: '100'
     }
   };
 

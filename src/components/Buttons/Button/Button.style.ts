@@ -4,7 +4,8 @@ export const StyledButton = styled.button<{
   width: string, 
   backgroundColor: string,
   color: string,
-  fontFamily: string
+  fontFamily: string,
+  fontWeight: string
 }>`
   width: ${(props) => props.width};
   padding: 16px 24px;
@@ -13,11 +14,9 @@ export const StyledButton = styled.button<{
   border-radius: 50px;
   color: ${(props) => props.color};
   font-family: ${(props) => props.fontFamily};
-  font-style: normal;
-  font-weight: 100;
+  font-weight: ${(props) => props.fontWeight};
   font-size: 1rem;
   text-align: center;
-  color: #FFFFFF;
   &:hover {
     cursor: pointer;
   }
