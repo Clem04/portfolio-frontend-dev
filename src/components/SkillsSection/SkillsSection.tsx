@@ -60,8 +60,6 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
       window.open(fileUrl, '_blank');
     };
     
-    
-    
     return (
       <Section 
         ref={ref} 

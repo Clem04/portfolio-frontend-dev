@@ -68,7 +68,7 @@ function App() {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(handleIntersection);
-    }, { threshold: 0.5 });
+    }, { threshold: 0.2 });
 
     if (headerSectionRef.current) {
       observer.observe(headerSectionRef.current);
@@ -92,6 +92,7 @@ function App() {
     };
   }, []);
 
+  console.log(isVisible)
   return (
     <AppContainer>
       <HeaderContainer />
