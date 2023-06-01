@@ -114,14 +114,13 @@ function ContactSection({ theme, dataTestId, sectionRef, isvisible }: ContactPro
             color={theme.colors.black}
             fontWeight={theme.fontWeights.light}
           >
-            Thank you for visiting my website! I'm thrilled to connect with you regarding the frontend software engineer role. I created this website to showcase my frontend development skills, and I believe it's a great platform to demonstrate my abilities.<br />
+            Thank you for visiting my website! I'm thrilled to connect with you regarding your software engineer role and needs as a company. I created this website to showcase some of my frontend development skills and I believe it's a great platform to demonstrate my abilities.<br />
             <br />
-            This website highlights my expertise in frontend development, particularly in creating visually appealing user interfaces. One of the highlights is an SVG file that I designed and implemented to enhance the overall user experience. It showcases my attention to detail and creativity in utilizing different web technologies.<br />
+            To develop this website, I utilized various tools and technologies. I built it using React Js which allowed me to create a dynamic and interactive user interface. TypeScript was used to ensure type safety and maintainability of the codebase. React Testing Library helped me ensure the quality and stability of the application through comprehensive testing. Additionally, Styled-Components played a crucial role in crafting a consistent and visually appealing design.<br />
             <br />
-            To develop this website, I utilized various tools and technologies. I built it using React Js, which allowed me to create a dynamic and interactive user interface. TypeScript was used to ensure type safety and maintainability of the codebase. React Testing Library helped me ensure the quality and stability of the application through comprehensive testing. Additionally, Styled-Components played a crucial role in crafting a consistent and visually appealing design.
+            In addition to my frontend skills, I also have knowledge in Ruby on Rails technologies. Furthermore, I am currently expanding my skillset by learning Python Django. While this website does not have a backend, I have experience with API calls, Graphql, Postgresql, and other backend technologies.<br />
             <br />
-            <br />
-            I would love to discuss my experience in more detail and how I can contribute to your organization. Please feel free to contact me at your convenience. I look forward to the opportunity to demonstrate my frontend software engineering skills and contribute to your team's success.
+            I would love to discuss my experience in more details and how I can contribute to your organization. Please feel free to contact me at your convenience. I look forward to the opportunity to demonstrate my frontend software engineering skills and contribute to your team's success!
             <br />
           </Text>
         </Content>

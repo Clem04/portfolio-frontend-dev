@@ -76,7 +76,7 @@ export const HeaderSection = forwardRef<HTMLDivElement, HeaderSectionProps>(
             isvisible={isvisible}
             color={theme.colors.white}
           >
-            Software Frontend Engineer
+            Software Engineer
           </Profession>
           <CertificationContainer>
             <ProgressBar

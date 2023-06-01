@@ -38,7 +38,7 @@ describe('HeaderSection', () => {
     expect(nameElement).toBeInTheDocument();
     expect(nameElement).toHaveStyle({ opacity: '1', color: 'white' });
 
-    const professionElement = screen.getByText('Software Frontend Engineer');
+    const professionElement = screen.getByText('Software Engineer');
     expect(professionElement).toBeInTheDocument();
     expect(professionElement).toHaveStyle({ opacity: '1' });
 
