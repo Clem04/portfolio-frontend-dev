@@ -40,19 +40,25 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
       name: "e-commerce",
       color: theme.colors.black,
       fontFamily: theme.fonts.industries,
-      fontWeight: theme.fontWeights.bold
+      fontWeight: theme.fontWeights.bold,
+      hasBorderRight: true,
+      hasBorderBottom: true
     },
     {
       name: "finance",
       color: theme.colors.black,
       fontFamily: theme.fonts.industries,
-      fontWeight: theme.fontWeights.bold
+      fontWeight: theme.fontWeights.bold,
+      hasBorderRight: true,
+      hasBorderBottom: true
     },
     {
       name: "health",
       color: theme.colors.black,
       fontFamily: theme.fonts.industries,
-      fontWeight: theme.fontWeights.bold
+      fontWeight: theme.fontWeights.bold,
+      hasBorderRight: false,
+      hasBorderBottom: false,
     }
   ];
 
@@ -105,8 +111,8 @@ function IndustriesSection({ theme, dataTestId, sectionRef, isvisible }: Industr
             {industries.map(industry => (
               <Industry 
                 key={industry.name}
-                borderRight={theme.colors.black} 
-                borderBottom={theme.colors.black}
+                hasBorderRight={industry.hasBorderRight}
+                hasBorderBottom={industry.hasBorderBottom}
                 color={industry.color}
                 fontFamily={industry.fontFamily}
                 fontWeight={industry.fontWeight}

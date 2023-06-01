@@ -41,14 +41,15 @@ export const GridIndustries = styled.div<{ isVisible: boolean }>`
 `
 
 export const Industry = styled.div<{ 
-  borderRight?: string, 
-  borderBottom?: string,
+  hasBorderRight: boolean,
+  hasBorderBottom: boolean,
   fontFamily: string,
   fontWeight: string,
   color: string
 }>`
   padding: 32px;
-  border-right: 1px solid ${(props) => props.borderRight || 'auto'};
+  border-right: ${(props) =>
+    props.hasBorderRight ? "1px solid " + props.color : "none"};
   font-family: ${props => props.fontFamily};
   color:${props => props.color};
   font-weight: ${props => props.fontWeight};
@@ -56,7 +57,8 @@ export const Industry = styled.div<{
   text-align: center;
   @media (max-width: 414px) {
     border-right: none;
-    border-bottom: ${(props) => props.borderBottom || 'auto'};
+    border-bottom: ${(props) =>
+      props.hasBorderBottom ? "1px solid " + props.color : "none"};
   }
   @media (max-width: 1024px) {
     font-size: 1.4rem;
