@@ -63,7 +63,7 @@ const SkillsSection = forwardRef<HTMLDivElement, SkillsProps>(({
   theme, dataTestId, isvisible, ...rest }, ref) => {
 
   const openPDF = () => {
-    const fileUrl = '/assets/resume.pdf';
+    const fileUrl = '/assets/C.Paiement-Software-Engineer.pdf';
     window.open(fileUrl, '_blank');
   };
 
