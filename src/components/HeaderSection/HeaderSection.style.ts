@@ -57,7 +57,12 @@ export const Certification = styled.p<{
   color: ${(props) => props.color};
   ${props => fadeInAnimation(props.isvisible)}
 
-  @media (max-width: 1024px) {
+  @media (max-width: 414px) {
+    width: 100%;
+    text-align: right;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
     width: 38%;
     margin: none;
     text-align: right;
